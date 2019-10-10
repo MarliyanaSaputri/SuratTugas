@@ -15,7 +15,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>asset/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>asset/bootstrap/js/bootstrap.min.js"></script>
   <!--   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery.dataTables.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/dataTables.bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/asset/css/dataTables.bootstrap.css" />
     <link rel="stylesheet" href="<?php echo base_url();?>asset/datepicker/datepicker3">
    <script type="text/javascript">
  $(function(){
@@ -27,8 +27,8 @@
  });
 </script>
     
-        <script src="<?php echo base_url();?>/assets/lib/datatables/jquery.dataTables.js"></script>
-    <script src="<?php echo base_url();?>/assets/lib/datatables/3/dataTables.bootstrap.js"></script>
+        <script src="<?php echo base_url();?>/asset/lib/datatables/jquery.dataTables.js"></script>
+    <script src="<?php echo base_url();?>/asset/lib/datatables/3/dataTables.bootstrap.js"></script>
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
     <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
     <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
