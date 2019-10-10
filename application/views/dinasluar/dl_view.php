@@ -45,7 +45,7 @@
 							<td align="left"><?php echo $no++;?></td>
 							<td align="left"><?php echo $data['id_dl']; ?></td>
 							<td align="left"><?php echo $data['no_st']; ?></td>
-							<td align="left"><?php echo $data['nip']; ?></td>
+							<td align="left"><?php echo $data['NIP']; ?></td>
 							<td align="left"><?php echo $data['tgl_pelaksanaan']. " s/d " .$data['tgl_akhir']; ?></td>			
 							<td align="left"><?php echo $data['daerah_tujuan']; ?></td>	
 							<td align="left"><?php echo $data['maksud_tujuan']; ?></td>

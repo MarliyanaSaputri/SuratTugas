@@ -46,7 +46,7 @@
 	                                        NIP 
 	                                    </label>
 	                                     <div class="col-md-5">
-	                                    	<input type="text" class="form-control" value ="<?php echo $dl['nip']; ?>" name="nip" id="nip" placeholder="" readonly="" />
+	                                    	<input type="text" class="form-control" value ="<?php echo $dl['NIP']; ?>" name="NIP" id="NIP" placeholder="" readonly="" />
 										</div>
 									</div>
 

@@ -53,7 +53,7 @@ class  DinasLuar extends CI_Controller {
 
 		$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
-		$nip = $this->input->post('nip');
+		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
 		$tgl_pel = $this->input->post('tgl_pelaksanaan');
 		//$tgl_pel =  substr($tgl_pel,6,4) . '-'.substr($tgl_pel,3,2) . 
@@ -75,7 +75,7 @@ class  DinasLuar extends CI_Controller {
 			$data = array(   		//data yang akan ditambah pada table 
 				'id_dl' => $id_dl,
 				'no_st' => $nost,
-				'nip' => $nip,
+				'NIP' => $nip,
 				'maksud_tujuan' => $maksud,
 				'tgl_pelaksanaan' => $tgl_pel,
 				'tgl_akhir' => $tgl_akhir,
@@ -126,7 +126,7 @@ class  DinasLuar extends CI_Controller {
 		
 		//$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
-		$nip = $this->input->post('nip');
+		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
 		$tgl_pel = $this->input->post('tgl_pelaksanaan');
 		$tgl_pel =  substr($tgl_pel,6,4) . '-'.substr($tgl_pel,3,2) . 
@@ -145,7 +145,7 @@ class  DinasLuar extends CI_Controller {
 		$data = array(   
 			//'id_dl'	=> $id,	//data yang akan ditambah pada table 
 			'no_st' => $nost,
-			'nip' => $nip,
+			'NIP' => $nip,
 			'maksud_tujuan' => $maksud,
 			'tgl_pelaksanaan' => $tgl_pel,
 			'tgl_akhir' => $tgl_akhir,

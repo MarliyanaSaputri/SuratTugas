@@ -42,7 +42,7 @@
 						<tr>
 							<td align="left"><?php echo $no++;?></td>
 							<td align="left"><?php echo $data['no_st']; ?></td>
-							<td align="left"><?php echo $data['nip']; ?></td>
+							<td align="left"><?php echo $data['NIP']; ?></td>
 							<td align="left"><?php echo $data['kd_bid']; ?></td>					
 							<td align="left"><?php echo $data['nama_tugas']; ?></td>
 							<td align="left"><?php echo $data['tgl_pembuatan']; ?></td>
