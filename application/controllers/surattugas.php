@@ -22,6 +22,7 @@ class  Surattugas extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('daftar_model');
+		check_not_login();
 		$this->load->config('pdf_config');
 		$this->load->library('fpdf');
 		$this->load->library('PDF_Code128');
