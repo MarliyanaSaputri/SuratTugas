@@ -13,8 +13,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active"><a href="<?php echo base_url();?>home"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+					 <?php if($this->fungsi->user_login()->level == 1) { ?>
                     <li><a href="<?php echo base_url();?>pegawai"><i class="fa fa-book"></i> Data Pegawai</a></li>
-                   
+                     <?php } ?>
+					<?php if($this->fungsi->user_login()->level == 1) { ?>
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th"></i> Bidang<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -22,6 +24,9 @@
                             <li><a href="#"><i class="fa fa-plus"></i> Tambah </a></li>
                         </ul>
                     </li>
+					  <?php } ?>
+					
+					  <?php if($this->fungsi->user_login()->level == 1) { ?>
                     <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Surat perintah<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -29,6 +34,18 @@
                             <li><a href="<?php echo base_url();?>surattugas/formtambahspt"><i class="fa fa-plus"></i> Tambah Surat Perintah Tugas</a></li>
                         </ul>
                     </li>
+					  <?php } ?>
+					
+					
+                         <?php if($this->fungsi->user_login()->level == 2) { ?>
+                       <li class="dropdown user-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list-ol"></i> Surat perintah<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo base_url(); ?>surattugas"><i class="fa fa-file"></i> Data Surat Perintah Tugas</a></li>
+                        </ul>
+                    </li>
+                    <?php } ?>
+					
                      <li class="dropdown user-dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plane"></i> Dinas Luar<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -43,12 +60,11 @@
                 <ul class="nav navbar-nav navbar-right navbar-user">
        
                      <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?=ucfirst
+                        ($this->fungsi->user_login()->username)?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-                            <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                            <li><a href="<?=site_url('auth/logout')?>"><i class="fa fa-power-off"></i> Log Out</a></li>
                         </ul>
                     </li>
                 </ul>
