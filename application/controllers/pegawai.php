@@ -22,6 +22,8 @@ class  Pegawai extends CI_Controller {
 	public function __construct() 
 	{
 		parent::__construct();
+		check_not_login();
+		check_admin();
 		$this->load->model('daftar_model');
 			
 		
