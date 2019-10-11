@@ -125,7 +125,7 @@
 							                Tanggal Pembuatan
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="date" class="form-control" name="tgl_pembuatan" placeholder="">
+					                    <input type="text" class="form-control datepicker" name="tgl_pembuatan" placeholder="">
 					                  </div>
 					                </div>
 
