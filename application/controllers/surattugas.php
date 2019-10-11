@@ -143,7 +143,7 @@ class  Surattugas extends CI_Controller {
 		$tabel = "tb_st";	
 		$tabeljoin = "tb_pegawai";
 		$wherejoin ="NIP"; 
-		$wherejb=array('jabatan'=>'Kepala Bidang Aplikasi Informatika');
+		$wherejb = array('jabatan'=>'Kepala Bidang Aplikasi Informatika');
 		$where = array('id_st'=>$nourut);
 		$id= $nourut; 
 		$cek1= $this->daftar_model->get_cariall($tabel,$tabeljoin,$wherejoin,$id);
@@ -155,7 +155,6 @@ class  Surattugas extends CI_Controller {
 				$NIP= $result['NIP'];
 				$kd_bid=$result['kd_bid'];
 				$tgl_pembuatan=$result['tgl_pembuatan'];
-				
 				$tgl_pembuatan =  date("d F Y",strtotime($tgl_pembuatan));
 				$nama_tugas=$result['nama_tugas'];
 			}
@@ -168,14 +167,14 @@ class  Surattugas extends CI_Controller {
 				$pangkat=$result['pangkat'];
 				$golongan=$result['golongan'];
 			}
+
 			foreach ($cek2 as $result)
 			{
 				$nipkp=$result['NIP'];
 				$namakp=$result['nama'];
 				$pangkatkp=$result['pangkat'];
-				
-			
 			}
+
 			$data=array('id_st'=>$nourut,
 				'no_st'=>$no_st,
 				'NIP'=>$NIP,
@@ -189,7 +188,6 @@ class  Surattugas extends CI_Controller {
 				'nipkp'=>$nipkp,
 				'namakp'=>$namakp,
 				'pangkatkp'=>$pangkatkp
-
 			);
 			$this->load->view('spt/cetak',$data);
 	}

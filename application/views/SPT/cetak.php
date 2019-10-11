@@ -153,7 +153,7 @@ $pdf->SetTitle('SURAT PERINTAH TUGAS');
 //Mulai dokumen
 $pdf->AddPage('P', 'A4');
 //meletakkan gambar
- $pdf->letak('assets/image/jatim2.jpg');
+ $pdf->letak('asset/img/jatim2.jpg');
 //meletakkan judul disamping logo diatas
 $pdf->judul('PEMERINTAH PROVINSI JAWA TIMUR', 'DINAS KOMUNIKASI DAN INFORMATIKA',' Jl.A. Yani No. 242 - 244 Surabaya, Telp. (031) 8294608, Fax. (031) 8294517','Website : kominfo.jatimprov.go.id', 'Email : kominfo@jatimprov.go.id','SURABAYA 60235');
 $pdf->judul2('SURAT  PERINTAH  TUGAS','Nomor :',$no_st);

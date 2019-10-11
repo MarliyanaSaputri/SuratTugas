@@ -164,7 +164,6 @@
                 document.getElementById("jabatan").value = $(this).attr('data-jabatan');
                 $('#myModal').modal('hide');
             });
-            
 //            tabel lookup mahasiswa
             $(function () {
                 $("#lookup").dataTable();

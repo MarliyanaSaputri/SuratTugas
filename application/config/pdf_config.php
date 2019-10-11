@@ -1,3 +1,3 @@
 <?php
-$config ['fonts_path']="assets/font/";
+$config ['fonts_path']="asset/font/";
 ?>
