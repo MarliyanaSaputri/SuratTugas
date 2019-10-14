@@ -55,7 +55,7 @@
 							                Maksud dan Tujuan
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="text" class="form-control" value ="<?php echo $dl['maksud_tujuan']; ?>" name="maksud_tujuan" id="maksud_tujuan" placeholder="">
+					                    <textarea type="text" class="form-control" name="maksud_tujuan" id="maksud_tujuan" placeholder=""><?php echo $dl['maksud_tujuan']; ?></textarea>
 					                  </div>
 					                </div>
 
@@ -64,12 +64,7 @@
 							                Tanggal Pelaksanaan 
 							            </label>
 					                  <div class="col-sm-3">
-					                    <input type="date" class="form-control datepicker" value="<?php echo $dl['tgl_pelaksanaan']; ?>" name="tgl_pelaksanaan">
-					                    <!-- value ="<?php// echo date("d-m-Y",strtotime($dl['tgl_pelaksanaan']))?>"  --> 
-					                  </div>
-					                  <div class="col-sm-2">
-					                    <input type="date" class="form-control datepicker" value="<?php echo $dl['tgl_akhir']; ?>" name="tgl_akhir">
-					                    <!-- value ="<?php //echo date("d-m-Y",strtotime($dl['tgl_akhir']))?>" -->
+					                    <input type="text" class="form-control datepicker" value ="<?php echo date("d-m-Y",strtotime($dl['tgl_pelaksanaan']))?>" id="range_tgl" name="tgl_pelaksanaan">
 					                  </div>
 					                </div>
 
@@ -78,38 +73,11 @@
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" value="<?php echo $dl['peserta_hadir']; ?>" name="peserta_hadir" placeholder="1. ">
-					                  <!-- 	<input id="hadir" value="<?php// echo $dl['peserta_hadir']; ?>" type="text" />
+					                  	<!-- <input type="text" class="form-control" value="<?php// echo $dl['peserta_hadir']; ?>" name="peserta_hadir" placeholder="1. "> -->
+					                 	<input id="hadir" value="<?php echo $dl['peserta_hadir']; ?>" type="text" />
 					                    <input id="hadir" value="1" type="hidden" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
-									    <div id="divHobi"></div> -->
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" value="<?php echo $dl['hadir2']; ?>" name="hadir2" placeholder="2. ">
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" value="<?php echo $dl['hadir3']; ?>" name="hadir3" placeholder="3. ">
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" value="<?php echo $dl['hadir4']; ?>" name="hadir4" placeholder="4. ">
+									    <div id="divPeserta"></div>
 					                  </div>
 					                </div>
 
@@ -145,7 +113,7 @@
 							                Tanggal Pembuatan
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="date" class="form-control datepicker" value="<?php echo $dl['tgl_pembuatan']; ?>" name="tgl_pembuatan" placeholder="">
+					                    <input type="text" class="form-control datepicker" value="<?php echo $dl['tgl_pembuatan']; ?>" name="tgl_pembuatan" placeholder="">
 					                    <!-- value="<?php //echo date("d-m-Y",strtotime($dl['tgl_pembuatan']))?>" -->
 					                  </div>
 					                </div>
@@ -163,22 +131,45 @@
 							 </div>
 				           </div> 
 
-				          
 
-<!-- 							<script language="javascript">
+
+				           <script src="<?php echo base_url();?>asset/js/moment.js"></script>
+						    <!-- js untuk daterangepicker -->
+						    <script src="<?php echo base_url();?>asset/js/daterangepicker.js"></script>
+
+						    <script type="text/javascript">
+						        $(document).ready(function(){
+						            $('.range-dtp i').click(function() {
+						              $(this).parent().find('input').click();
+						            });
+
+						             $('#range_tgl').daterangepicker({
+						                autoUpdateInput: false,
+						                format : 'DD/MM/YYYY',
+						                useCurrent : false,
+						                "showDropdowns": true,
+						                "autoApply": true,
+						             }, function(start, end, label) {
+						                $('#range_tgl').val(start.format('DD/MM/YYYY')+" - "+end.format('DD/MM/YYYY'))
+						            });
+
+						        });
+						    </script>
+
+							<script language="javascript">
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir' placeholder='Nama Peserta' /><a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
-							     $("#divHobi").append(stre);
-							     hadir = (hadir);
+							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir' placeholder='Nama Peserta' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     $("#divPeserta").append(stre);
+							     hadir = (hadir-1) + 2;
 							     document.getElementById("hadir").value = hadir;
 							   }
 							   function hapusElemen(hadir) {
 							     $(hadir).remove();
 							   }
 							</script>
- -->				       
+
 
 						</div>				            
 				    </div>

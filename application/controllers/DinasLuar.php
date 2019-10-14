@@ -42,7 +42,7 @@ class  DinasLuar extends CI_Controller {
 
 		$data=array('title'=>'FormTambahDL',
 		'daftarst' => $this->daftar_model->cari_data($tabel,$where),
-		 'isi' =>'dinasluar/formtmb'
+		 'isi' =>'dinasluar/formtmb1'
 		 );
 
 		$this->load->view('layout/wrapper',$data);
@@ -56,34 +56,28 @@ class  DinasLuar extends CI_Controller {
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
-		$tgl_pel = $this->input->post('tgl_pelaksanaan');
-		//$tgl_pel =  substr($tgl_pel,6,4) . '-'.substr($tgl_pel,3,2) . 
-	//'-'.substr($tgl_pel,0,2) ;
-		$tgl_akhir = $this->input->post('tgl_akhir');
-		//$tgl_akhir =  substr($tgl_akhir,6,4) . '-'.substr($tgl_akhir,3,2) . 
-	//'-'.substr($tgl_akhir,0,2) ;
+		$range_tgl = $this->input->post('tgl_pelaksanaan');
+		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
+	'-'.substr($range_tgl,0,2) ;
+		$range_tgl = $this->input->post('tgl_akhir');
+		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
+	'-'.substr($range_tgl,0,2) ;
 		$hadir = $this->input->post('peserta_hadir');
-		$hadir2 = $this->input->post('hadir2');
-		$hadir3 = $this->input->post('hadir3');
-		$hadir4 = $this->input->post('hadir4');
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
 		$tgl_buat = $this->input->post('tgl_pembuatan');
-		//$tgl_buat =  substr($tgl_buat,6,4) . '-'.substr($tgl_buat,3,2) . 
-	//'-'.substr($tgl_buat,0,2) ;
+		$tgl_buat =  substr($tgl_buat,6,4) . '-'.substr($tgl_buat,3,2) . 
+	'-'.substr($tgl_buat,0,2) ;
  
 			$data = array(   		//data yang akan ditambah pada table 
 				'id_dl' => $id_dl,
 				'no_st' => $nost,
 				'NIP' => $nip,
 				'maksud_tujuan' => $maksud,
-				'tgl_pelaksanaan' => $tgl_pel,
-				'tgl_akhir' => $tgl_akhir,
+				'tgl_pelaksanaan' => $range_tgl,
+				'tgl_akhir' => $range_tgl,
 				'peserta_hadir' => $hadir,
-				'hadir2' => $hadir2,
-				'hadir3' => $hadir3,
-				'hadir4' => $hadir4,
 				'daerah_tujuan' => $daerah,
 				'bahasan' => $bahas,
 				'lain-lain' => $lain,
@@ -129,12 +123,12 @@ class  DinasLuar extends CI_Controller {
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
-		$tgl_pel = $this->input->post('tgl_pelaksanaan');
-		$tgl_pel =  substr($tgl_pel,6,4) . '-'.substr($tgl_pel,3,2) . 
-	'-'.substr($tgl_pel,0,2) ;
-		$tgl_akhir = $this->input->post('tgl_akhir');
-		$tgl_akhir =  substr($tgl_akhir,6,4) . '-'.substr($tgl_akhir,3,2) . 
-	'-'.substr($tgl_akhir,0,2) ;
+		$range_tgl = $this->input->post('tgl_pelaksanaan');
+		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
+	'-'.substr($range_tgl,0,2) ;
+	//	$range_tgl = $this->input->post('tgl_akhir');
+	//	$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
+	//'-'.substr($range_tgl,0,2) ;
 		$hadir = $this->input->post('peserta_hadir');
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
@@ -148,8 +142,8 @@ class  DinasLuar extends CI_Controller {
 			'no_st' => $nost,
 			'NIP' => $nip,
 			'maksud_tujuan' => $maksud,
-			'tgl_pelaksanaan' => $tgl_pel,
-			'tgl_akhir' => $tgl_akhir,
+			'tgl_pelaksanaan' => $range_tgl,
+			//'tgl_akhir' => $range_tgl,
 			'peserta_hadir' => $hadir,
 			'daerah_tujuan' => $daerah,
 			'bahasan' => $bahas,
