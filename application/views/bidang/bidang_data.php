@@ -34,7 +34,7 @@
 				<th class="text-center">No</th>
 				<th class="text-center">Kode Bidang</th>
 				<th class="text-center">Nama Bidang</th>
-				<th class="text-center">Pilihan</th>
+				<!-- <th class="text-center">Pilihan</th> -->
 			</tr>
 			</thead>
 			<tbody>
@@ -46,7 +46,7 @@
 				<td align="left"><?php echo $no++;?></td>
 				<td align="left"><?php echo $data['kd_bid']; ?></td>
 				<td align="left"><?php echo $data['nama_bidang']; ?></td>
-				<td class="text-center" width="160px">			
+			<!-- 	<td class="text-center" width="160px">	 -->		
 				<!-- <a href="" class="btn btn-danger btn-xs btn-flat" >
 					<i class="glyphicon glyphicon-trash"></i> Delete
 				</a> -->

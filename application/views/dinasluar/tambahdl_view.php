@@ -47,7 +47,7 @@
 							<td align="left"><?php echo $data['nama_tugas']; ?></td>
 							<td align="left"><?php echo $data['tgl_pembuatan']; ?></td>
 							<td align="left"> 
-								<a title = "Tambah DL" class="btn btn-warning btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/formtambah/<?php echo $data['id_st'];?>"><span class="glyphicon glyphicon-edit"></span></a>
+								<a title = "Tambah DL" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/formtambah/<?php echo $data['id_st'];?>"><span class="glyphicon glyphicon-edit"></span></a>
 							</td>
 						</tr>
 
