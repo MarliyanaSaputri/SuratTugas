@@ -71,23 +71,15 @@
 							                Tanggal Pelaksanaan 
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="text" id="range-tanggal" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">
-            									
+					                    <input type="text" id="range-tanggal" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">		
 					                  </div>
-					                  
 					                </div>
-					               
-									
-
-
-					
-
 									<div class="form-group">
 					                   <label for="firstname" class="col-md-3">
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<input id="hadir" value="1" type="hidden" />
+					                  	<input id="hadir" name="peserta_hadir" value="1" type="hidden" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
 									    <div id="divHobi"></div>
 					                  </div>
