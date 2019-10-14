@@ -26,12 +26,11 @@
 					<thead>
 						<tr>
 							<th width="3%">No</th>
-							<th width="5%">Id DL</th>
-							<th width="12%">No ST</th>
+							<th width="15%">No ST</th>
 							<th width="17%">NIP</th>
 							<th width="20%">Tanggal Pelaksanaan</th>
 							<th width="10%">Daerah Tujuan</th>
-							<th width="20%">Maksud dan Tujuan</th>
+							<th width="15%">Maksud dan Tujuan</th>
 							<th width="15%">Pilihan</th>	
 						</tr>
 					</thead>
@@ -43,16 +42,15 @@
 						?>
 						<tr>
 							<td align="left"><?php echo $no++;?></td>
-							<td align="left"><?php echo $data['id_dl']; ?></td>
 							<td align="left"><?php echo $data['no_st']; ?></td>
 							<td align="left"><?php echo $data['NIP']; ?></td>
 							<td align="left"><?php echo $data['tgl_pelaksanaan']. " s/d " .$data['tgl_akhir']; ?></td>			
 							<td align="left"><?php echo $data['daerah_tujuan']; ?></td>	
 							<td align="left"><?php echo $data['maksud_tujuan']; ?></td>
 							<td align="left">
-								<a title = "Unduh DL" class="btn btn-warning" href="#"><span class="glyphicon glyphicon-download"></span></a>
-								<a title = "Edit DL" class="btn btn-warning " href="<?php echo base_url() ?>DinasLuar/update/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-edit"></span></a>
-								<a title = "Delete DL" class="btn btn-warning btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/delete/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-trash"></span></a>
+								<a title = "Unduh DL" class="btn btn-danger" href="#"><span class="glyphicon glyphicon-download"></span></a>
+								<a title = "Edit DL" class="btn btn-danger " href="<?php echo base_url() ?>DinasLuar/update/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-edit"></span></a>
+								<a title = "Delete DL" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/delete/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-trash"></span></a>
 							</td>
 						</tr>
 

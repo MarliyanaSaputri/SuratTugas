@@ -114,7 +114,7 @@
                                     <div class="col-sm-8">
                                     <button type="submit" class="btn btn-default">Cancel</button>
 
-                                    <button type="submit" name="simpan" class="btn btn-info pull-right">Tambah</button>
+                                    <button type="submit" name="simpan" class="btn btn-info pull-right">Simpan</button>
                                     </div>
                                 </div>
                                 </div>
