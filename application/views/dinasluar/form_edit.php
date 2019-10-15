@@ -138,7 +138,7 @@
 
 							
 					                <div class="box-footer">
-						                <button type="submit" name="simpan" class="btn btn-info pull-right">Edit</button>
+						                <button type="submit" name="simpan" class="btn btn-info pull-right">Simpan</button>
 					              	</div>
 				              	</div>
 				              </form>

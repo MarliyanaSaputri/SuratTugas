@@ -11,7 +11,7 @@
                   <div class="box">                    
                      <div class="row">
                         <div class="col-lg-12">
-                         <div class="panel panel-warning">
+                         <div class="panel panel-primary">
                             <div class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Form Tambah Dinas Luar</h3>
                             </div>
@@ -58,7 +58,7 @@
 							                Tanggal Pelaksanaan 
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="text" id="range_tgl" name="tgl_pelaksanaan" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">
+					                    <input type="text" id="range_tgl" name="tgl_pelaksanaan" class="form-control" placeholder="">
 					                  </div>
 					                </div>
 
