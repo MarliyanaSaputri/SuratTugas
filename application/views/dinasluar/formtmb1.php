@@ -25,15 +25,6 @@
 					           	<div class="box-body">
 								
 					           		<div class="form-group">
-					                    <label for="firstname" class="col-md-3">
-							                ID Dinas Luar : 
-							            </label>
-					                  <div class="col-sm-5">
-					                    <input type="text" class="form-control" name="id_dl" placeholder="" readonly="" />
-					                  </div>
-					                </div>
-
-					           		<div class="form-group">
 										<label for="firstname" class="col-md-3">
 						                	No. ST : 
 						            	</label>
@@ -78,9 +69,37 @@
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<input id="hadir" value="1" type="hidden" />
+					                  	<input type="text" class="form-control" name="peserta_hadir" placeholder="1. ">
+					                  	<!-- <input id="hadir" value="1" type="hidden" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
-									    <div id="divPeserta"></div>
+									    <div id="divPeserta"></div> -->
+					                  </div>
+					                </div>
+
+					                <div class="form-group">
+					                   <label for="firstname" class="col-md-3">
+							                
+							            </label>
+					                  <div class="col-sm-5">
+					                  	<input type="text" class="form-control" name="hadir2" placeholder="2. ">
+					                  </div>
+					                </div>
+
+					                <div class="form-group">
+					                   <label for="firstname" class="col-md-3">
+							                
+							            </label>
+					                  <div class="col-sm-5">
+					                  	 <input type="text" class="form-control" name="hadir3" placeholder="3. ">
+					                  </div>
+					                </div>
+
+					                <div class="form-group">
+					                   <label for="firstname" class="col-md-3">
+							                
+							            </label>
+					                  <div class="col-sm-5">
+					                  	 <input type="text" class="form-control" name="hadir4" placeholder="4. ">
 					                  </div>
 					                </div>
 
@@ -137,7 +156,7 @@
 
 
 
-							<script language="javascript">
+							<!-- <script language="javascript">
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
@@ -149,7 +168,7 @@
 							   function hapusElemen(hadir) {
 							     $(hadir).remove();
 							   }
-							</script>
+							</script> -->
 
 
 
@@ -165,12 +184,12 @@
 						            });
 
 						             $('#range_tgl').daterangepicker({
-						                autoUpdateInput: true,
+						                autoUpdateInput: false,
 						                format : 'DD/MM/YYYY',
 						                useCurrent : false,
 						                "showDropdowns": true,
 						                "autoApply": true,
-						             }, function(start, end) {
+						             }, function(start, end, label) {
 						                $('#range_tgl').val(start.format('DD/MM/YYYY')+" - "+end.format('DD/MM/YYYY'))
 						            });
 

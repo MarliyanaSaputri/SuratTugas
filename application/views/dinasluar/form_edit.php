@@ -24,15 +24,6 @@
 					           	<div class="box-body">
 								
 					           		<div class="form-group">
-					                    <label for="firstname" class="col-md-3">
-							                ID Dinas Luar : 
-							            </label>
-					                  <div class="col-sm-5">
-					                    <input type="text" class="form-control" value ="<?php echo $dl['id_dl']; ?>" name="id_dl" id="id_dl" placeholder="" readonly="">
-					                  </div>
-					                </div>
-
-					           		<div class="form-group">
 										<label for="firstname" class="col-md-3">
 						                	No. ST : 
 						            	</label>
@@ -64,8 +55,9 @@
 							                Tanggal Pelaksanaan 
 							            </label>
 					                  <div class="col-sm-3">
-					                    <input type="text" class="form-control datepicker" value ="<?php echo date("d-m-Y",strtotime($dl['tgl_pelaksanaan']))?>" id="range_tgl" name="tgl_pelaksanaan">
+					                     <input type="text" class="form-control" value ="<?php echo date("d-m-Y",strtotime($dl['tgl_pelaksanaan']))?>" id="range_tgl" name="tgl_pelaksanaan">
 					                  </div>
+					                  
 					                </div>
 
 									<div class="form-group">
@@ -73,11 +65,38 @@
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<!-- <input type="text" class="form-control" value="<?php// echo $dl['peserta_hadir']; ?>" name="peserta_hadir" placeholder="1. "> -->
-					                 	<input id="hadir" value="<?php echo $dl['peserta_hadir']; ?>" type="text" />
+					                  	<input type="text" class="form-control" value="<?php echo $dl['peserta_hadir']; ?>" name="peserta_hadir" placeholder="1. ">
+					                 	<!-- <input id="hadir" value="<?php //echo $dl['peserta_hadir']; ?>" type="text" />
 					                    <input id="hadir" value="1" type="hidden" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
-									    <div id="divPeserta"></div>
+									    <div id="divPeserta"></div> -->
+					                  </div>
+					                </div>
+
+					                <div class="form-group">
+					                   <label for="firstname" class="col-md-3">
+							                
+							            </label>
+					                  <div class="col-sm-5">
+					                  	<input type="text" class="form-control" value="<?php echo $dl['hadir2']; ?>" name="hadir2" placeholder="2. ">
+					                  </div>
+					                </div>
+
+					                <div class="form-group">
+					                   <label for="firstname" class="col-md-3">
+							                
+							            </label>
+					                  <div class="col-sm-5">
+					                  	 <input type="text" class="form-control" value="<?php echo $dl['hadir3']; ?>" name="hadir3" placeholder="3. ">
+					                  </div>
+					                </div>
+
+					                <div class="form-group">
+					                   <label for="firstname" class="col-md-3">
+							                
+							            </label>
+					                  <div class="col-sm-5">
+					                  	 <input type="text" class="form-control" value="<?php echo $dl['hadir4']; ?>" name="hadir4" placeholder="4. ">
 					                  </div>
 					                </div>
 
@@ -113,8 +132,7 @@
 							                Tanggal Pembuatan
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="text" class="form-control datepicker" value="<?php echo $dl['tgl_pembuatan']; ?>" name="tgl_pembuatan" placeholder="">
-					                    <!-- value="<?php //echo date("d-m-Y",strtotime($dl['tgl_pembuatan']))?>" -->
+					                    <input type="text" class="form-control datepicker" value="<?php echo date("d-m-Y",strtotime($dl['tgl_pembuatan']))?>" name="tgl_pembuatan" placeholder="">
 					                  </div>
 					                </div>
 
@@ -156,7 +174,7 @@
 						        });
 						    </script>
 
-							<script language="javascript">
+							<!-- <script language="javascript">
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
@@ -168,7 +186,7 @@
 							   function hapusElemen(hadir) {
 							     $(hadir).remove();
 							   }
-							</script>
+							</script> -->
 
 
 						</div>				            
