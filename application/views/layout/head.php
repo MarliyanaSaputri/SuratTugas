@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/css/local.css" />
+    <link rel="stylesheet" href="<?php echo base_url();?>asset/css/daterangepicker.css" type="text/css"> 
 
 <link href="<?php echo base_url();?>asset/css/datepicker3.css" rel="stylesheet">
 <!--Icons-->

@@ -1,3 +1,5 @@
+
+
 <div id="page-wrapper">
      <div class="row">
        <div class="col-lg-12">
@@ -51,17 +53,13 @@
 					                  </div>
 					                </div>
 
-					                <div class="form-group">
+					   				<div class="form-group">
 					                   <label for="firstname" class="col-md-3">
 							                Tanggal Pelaksanaan 
 							            </label>
 					                  <div class="col-sm-5">
 					                    <input type="text" id="range_tgl" name="tgl_pelaksanaan" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">
-            									
 					                  </div>
-					                  <!-- <div class="col-sm-2">
-					                    <input type="date" class="form-control datepicker" name="tgl_akhir">
-					                  </div> -->
 					                </div>
 
 									<div class="form-group">
@@ -155,27 +153,12 @@
 
 
 
-
-							<!-- <script language="javascript">
-							   function tambahPeserta() {
-							     var hadir = document.getElementById("hadir").value;
-							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
-							     $("#divPeserta").append(stre);
-							     hadir = (hadir-1) + 2;
-							     document.getElementById("hadir").value = hadir;
-							   }
-							   function hapusElemen(hadir) {
-							     $(hadir).remove();
-							   }
-							</script> -->
-
-
+					                            
+				          
 
 							<script src="<?php echo base_url();?>asset/js/moment.js"></script>
 						    <!-- js untuk daterangepicker -->
 						    <script src="<?php echo base_url();?>asset/js/daterangepicker.js"></script>
-
 
 						    <script type="text/javascript">
 						        $(document).ready(function(){
@@ -196,8 +179,19 @@
 						        });
 						    </script>
 
-							
-
+							<script language="javascript">
+							   function tambahPeserta() {
+							     var hadir = document.getElementById("hadir").value;
+							     var stre;
+							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir' placeholder='Nama Peserta' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     $("#divPeserta").append(stre);
+							     hadir = (hadir-1) + 2;
+							     document.getElementById("hadir").value = hadir;
+							   }
+							   function hapusElemen(hadir) {
+							     $(hadir).remove();
+							   }
+							</script>
 							 
 				       </div>				            
 				    </div>
