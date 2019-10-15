@@ -72,7 +72,7 @@
                                     <label for="firstname" class="col-md-3">
                                     Nama</label>
                                     <div class="col-sm-5">
-                                        <input type="text" class="form-control" name="nama" id="nama" placeholder="">
+                                        <input type="text" readonly="" class="form-control" name="nama" id="nama" placeholder="">
                                     </div>
                                     </div>
                                     <div class="form-group">
@@ -80,7 +80,7 @@
                                        Pangkat / Gol
                                     </label>
                                     <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="pangkat" name="pangkat" placeholder="">
+                                    <input type="text" readonly="" class="form-control" id="pangkat" name="pangkat" placeholder="">
                                     </div>
                                     </div>
                                     <div class="form-group">
@@ -88,7 +88,7 @@
                                         Jabatan
                                         </label>
                                     <div class="col-sm-5">
-                                    <textarea type="text" class="form-control" id="jabatan" name="jabatan" placeholder=""></textarea>
+                                    <textarea type="text" readonly="" class="form-control" id="jabatan" name="jabatan" placeholder=""></textarea>
                                     </div>
                                     </div>               
                                     <div class="form-group">

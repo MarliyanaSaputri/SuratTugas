@@ -58,7 +58,7 @@
                                         NIP 
                                     </label>
                                     <div class="col-md-5">
-                                        <input type="text" class="form-control" value="<?php echo $st['NIP']?>" name="NIP" id="NIP"  />
+                                        <input type="text" readonly="" class="form-control" value="<?php echo $st['NIP']?>" name="NIP" id="NIP"  />
                                     </div>
                                     <?php foreach($pegawai as $pg):?>
                                     <div class="col-md-2">
@@ -71,7 +71,7 @@
                                     <label for="firstname" class="col-md-3">
                                     Nama</label>
                                     <div class="col-sm-5">
-                                    <input type="text" class="form-control" value="<?php echo $pg['nama']?>" name="nama" id="nama" placeholder="">
+                                    <input type="text" class="form-control" value="<?php echo $pg['nama']?>" name="nama" readonly="" id="nama" placeholder="">
                                     </div>
                                     </div>
                                     <div class="form-group">
@@ -79,7 +79,7 @@
                                        Pangkat / Gol
                                     </label>
                                     <div class="col-sm-5">
-                                    <input type="text" class="form-control" value="<?php echo $pg['pangkat']  ?>" id="pangkat" name="pangkat" placeholder="">
+                                    <input type="text" readonly="" class="form-control" value="<?php echo $pg['pangkat']  ?>" id="pangkat" name="pangkat" placeholder="">
                                     </div>
                                     </div>
                                     <div class="form-group">
@@ -87,7 +87,7 @@
                                         Jabatan
                                     </label>
                                     <div class="col-sm-5">
-                                    <textarea type="text" class="form-control" id="jabatan" name="jabatan" placeholder=""><?php echo $pg['jabatan']?></textarea>
+                                    <textarea type="text" readonly="" class="form-control" id="jabatan" name="jabatan" placeholder=""><?php echo $pg['jabatan']?></textarea>
                                     </div>
                                     </div>  
                                     <?php
