@@ -23,7 +23,7 @@
 					            <form class="form-horizontal" method="post" id="formtmb" action="<?php echo base_url()?>DinasLuar/prosestambah/<?php echo $st['id_st'] ;?>">
 
 					           	<div class="box-body">
-								
+
 					           		<div class="form-group">
 										<label for="firstname" class="col-md-3">
 						                	No. ST : 
@@ -38,7 +38,7 @@
 	                                        NIP 
 	                                    </label>
 	                                     <div class="col-md-5">
-	                                    	<input type="text" class="form-control" value="<?php echo $st['NIP']; ?>" name="NIP" placeholder="" readonly="" /> 
+	                                    	<input type="text" class="form-control" value="<?php echo $st['NIP']; ?>" name="NIP" placeholder="" readonly="" />
 										</div>
 									</div>
 
@@ -47,7 +47,7 @@
 							                Maksud dan Tujuan
 							            </label>
 					                  <div class="col-sm-5">
-					                    <input type="text" class="form-control" name="maksud_tujuan" placeholder="">
+					                    <textarea type="text" class="form-control" name="maksud_tujuan" placeholder=""></textarea>
 					                  </div>
 					                </div>
 
@@ -57,11 +57,7 @@
 							            </label>
 					                  <div class="col-sm-5">
 					                    <input type="text" id="range_tgl" name="tgl_pelaksanaan" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">
-            									
 					                  </div>
-					                  <!-- <div class="col-sm-2">
-					                    <input type="date" class="form-control datepicker" name="tgl_akhir">
-					                  </div> -->
 					                </div>
 
 									<div class="form-group">

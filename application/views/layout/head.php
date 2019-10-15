@@ -16,7 +16,7 @@
     <script type="text/javascript" src="<?php echo base_url();?>asset/bootstrap/js/bootstrap.min.js"></script>
   <!--   <link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/jquery.dataTables.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/asset/css/dataTables.bootstrap.css" />
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/datepicker/datepicker3">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>asset/css/datepicker3.css">
    <script type="text/javascript">
  $(function(){
   $(".datepicker").datepicker({
