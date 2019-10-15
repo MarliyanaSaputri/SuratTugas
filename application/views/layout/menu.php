@@ -17,13 +17,7 @@
                     <li><a href="<?php echo base_url();?>pegawai"><i class="fa fa-book"></i> Data Pegawai</a></li>
                      <?php } ?>
 					<?php if($this->fungsi->user_login()->level == 1) { ?>
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th"></i> Bidang<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?php echo base_url();?>Bidang"><i class="fa fa-file"></i> Daftar Bidang</a></li>
-                            <li><a href="#"><i class="fa fa-plus"></i> Tambah </a></li>
-                        </ul>
-                    </li>
+                    <li><a href="<?php echo base_url();?>Bidang"><i class="fa fa-group"></i> Data Bidang</a></li>
 					  <?php } ?>
 					
 					  <?php if($this->fungsi->user_login()->level == 1) { ?>

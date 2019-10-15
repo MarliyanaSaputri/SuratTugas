@@ -71,12 +71,7 @@
 							                Tanggal Pelaksanaan 
 							            </label>
 					                  <div class="col-sm-5">
-<<<<<<< HEAD
-					                    <input type="text" id="range-tanggal" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">		
-=======
 					                    <input type="text" id="range_tgl" name="tgl_pelaksanaan" class="form-control" placeholder="dd/mm/yyyy - dd/mm/yyyy">
-            									
->>>>>>> 28a89b7ee71d3eb3b3c15bc2ecc6096e0354e203
 					                  </div>
 					                </div>
 									<div class="form-group">
