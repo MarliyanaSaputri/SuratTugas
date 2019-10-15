@@ -7,13 +7,13 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="<?=base_url()?>assets/macam/bootstrap.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>asset/macam/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?=base_url()?>assets/macam/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>asset/macam/AdminLTE.min.css">
   <!-- iCheck -->
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
