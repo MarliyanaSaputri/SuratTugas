@@ -52,17 +52,20 @@ class  DinasLuar extends CI_Controller {
 	{	
 		$id_st = $edit;
 
-		$id_dl = $this->input->post('id_dl');
+	//	$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
 		$range_tgl = $this->input->post('tgl_pelaksanaan');
 		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
 	'-'.substr($range_tgl,0,2) ;
-		$range_tgl = $this->input->post('tgl_akhir');
-		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
-	'-'.substr($range_tgl,0,2) ;
+	//	$range_tgl = $this->input->post('tgl_akhir');
+	//	$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
+	//'-'.substr($range_tgl,0,2) ;
 		$hadir = $this->input->post('peserta_hadir');
+		$hadir2 = $this->input->post('hadir2');
+		$hadir3 = $this->input->post('hadir3');
+		$hadir4 = $this->input->post('hadir4');
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
@@ -71,13 +74,16 @@ class  DinasLuar extends CI_Controller {
 	'-'.substr($tgl_buat,0,2) ;
  
 			$data = array(   		//data yang akan ditambah pada table 
-				'id_dl' => $id_dl,
+			//	'id_dl' => $id_dl,
 				'no_st' => $nost,
 				'NIP' => $nip,
 				'maksud_tujuan' => $maksud,
 				'tgl_pelaksanaan' => $range_tgl,
-				'tgl_akhir' => $range_tgl,
+				//'tgl_akhir' => $range_tgl,
 				'peserta_hadir' => $hadir,
+				'hadir2' => $hadir2,
+				'hadir3' => $hadir3,
+				'hadir4' => $hadir4,
 				'daerah_tujuan' => $daerah,
 				'bahasan' => $bahas,
 				'lain-lain' => $lain,
@@ -130,6 +136,9 @@ class  DinasLuar extends CI_Controller {
 	//	$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
 	//'-'.substr($range_tgl,0,2) ;
 		$hadir = $this->input->post('peserta_hadir');
+		$hadir2 = $this->input->post('hadir2');
+		$hadir3 = $this->input->post('hadir3');
+		$hadir4 = $this->input->post('hadir4');
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
@@ -145,6 +154,9 @@ class  DinasLuar extends CI_Controller {
 			'tgl_pelaksanaan' => $range_tgl,
 			//'tgl_akhir' => $range_tgl,
 			'peserta_hadir' => $hadir,
+			'hadir2' => $hadir2,
+			'hadir3' => $hadir3,
+			'hadir4' => $hadir4,
 			'daerah_tujuan' => $daerah,
 			'bahasan' => $bahas,
 			'lain-lain' => $lain,
