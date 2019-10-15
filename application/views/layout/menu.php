@@ -17,7 +17,7 @@
                     <li><a href="<?php echo base_url();?>pegawai"><i class="fa fa-book"></i> Data Pegawai</a></li>
                      <?php } ?>
 					<?php if($this->fungsi->user_login()->level == 1) { ?>
-                    <li><a href="<?php echo base_url();?>Bidang"><i class="fa fa-file"></i> Data Bidang</a></li>
+                    <li><a href="<?php echo base_url();?>Bidang"><i class="fa fa-group"></i> Data Bidang</a></li>
 					  <?php } ?>
 					
 					  <?php if($this->fungsi->user_login()->level == 1) { ?>
