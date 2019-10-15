@@ -88,7 +88,7 @@
                                         Jabatan
                                         </label>
                                     <div class="col-sm-5">
-                                    <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="">
+                                    <textarea type="text" class="form-control" id="jabatan" name="jabatan" placeholder=""></textarea>
                                     </div>
                                     </div>               
                                     <div class="form-group">

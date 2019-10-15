@@ -87,7 +87,7 @@
                                         Jabatan
                                     </label>
                                     <div class="col-sm-5">
-                                    <input type="text" class="form-control" value="<?php echo $pg['jabatan']?>" id="jabatan" name="jabatan" placeholder="">
+                                    <textarea type="text" class="form-control" id="jabatan" name="jabatan" placeholder=""><?php echo $pg['jabatan']?></textarea>
                                     </div>
                                     </div>  
                                     <?php
