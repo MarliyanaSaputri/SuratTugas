@@ -52,7 +52,7 @@ class  DinasLuar extends CI_Controller {
 	{	
 		$id_st = $edit;
 
-	//	$id_dl = $this->input->post('id_dl');
+		$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
@@ -74,12 +74,12 @@ class  DinasLuar extends CI_Controller {
 	'-'.substr($tgl_buat,0,2) ;
  
 			$data = array(   		//data yang akan ditambah pada table 
-			//	'id_dl' => $id_dl,
+				'id_dl' => $id_dl,
 				'no_st' => $nost,
 				'NIP' => $nip,
 				'maksud_tujuan' => $maksud,
 				'tgl_pelaksanaan' => $range_tgl,
-				//'tgl_akhir' => $range_tgl,
+			//	'tgl_akhir' => $range_tgl,
 				'peserta_hadir' => $hadir,
 				'hadir2' => $hadir2,
 				'hadir3' => $hadir3,
