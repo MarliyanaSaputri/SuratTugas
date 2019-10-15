@@ -1,9 +1,9 @@
 <div id="page-wrapper">
-     <div class="row">
+    <div class="row">
        <div class="col-lg-12">
-            <h1>DISKOMINFO</h1>
-            <!-- Main content -->
-            <section class="content">
+        <h1>DISKOMINFO</h1>
+        <!-- Main content -->
+        <section class="content">
             <div class="row">
                 <div class="col-xs-12">
                   <div class="box">                    
@@ -120,14 +120,14 @@
                                 </div>
          <!-- Modal -->
      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="width:800px">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Lookup Mahasiswa</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table id="lookup" class="table table-bordered table-hover table-striped">
+    <div class="modal-dialog" style="width:800px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Lookup Mahasiswa</h4>
+            </div>
+            <div class="modal-body">
+                <table id="lookup" class="table table-bordered table-hover table-striped">
                             <thead>
                             <tr>
                                 <th>NIP</th>
