@@ -173,7 +173,7 @@
 						                "showDropdowns": true,
 						                "autoApply": true,
 						             }, function(start, end, label) {
-						                $('#range_tgl').val(start.format('DD/MM/YYYY')+" - "+end.format('DD/MM/YYYY'))
+						                $('#range_tgl').val(start.format('DD/MM/YYYY')+"-"+end.format('DD/MM/YYYY'))
 						            });
 
 						        });
