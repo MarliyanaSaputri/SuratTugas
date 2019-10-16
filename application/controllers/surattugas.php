@@ -39,7 +39,6 @@ class  Surattugas extends CI_Controller {
 		 'isi' =>'spt/dataspt'
 		 );
 		$this->load->view('layout/wrapper',$data);
-		//$this->load->view('welcome_message');
 	}
 
 	public function formtambahspt()

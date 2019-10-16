@@ -128,10 +128,6 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'PROVINSI JAWA TIMUR',0,1,'L');	
 	}
 
-	// function cap($tangan){
-	// 	$this->Ln(5);
-	// 	$this->Image($tangan,120,145,55,35);
-	// }
 	function kepala($namakp,$pangkatkp,$nipkp){
 		$this->Ln(25);
 		$this->Cell(100);
@@ -163,7 +159,6 @@ $pdf->dasar();
 $pdf->judul3();
 $pdf->kepada($nama,$NIP,$pangkat,$golongan,$jabatan);
 $pdf->tujuan('Untuk',$nama_tugas);
-
 
 //tanda tangan kepbag
 $pdf->ttd($tgl_pembuatan);

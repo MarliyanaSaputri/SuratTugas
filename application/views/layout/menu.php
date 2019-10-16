@@ -45,7 +45,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo base_url(); ?>DinasLuar"><i class="fa fa-file"></i> Data Dinas Luar</a></li>
                             <li><a href="<?php echo base_url(); ?>DinasLuar/tambahdl"><i class="fa fa-plus"></i> Tambah Data Dinas Luar</a></li>
-                            <li><a href="<?php echo base_url();?>dinasluar1/nota"><i class="fa fa-check"></i> Nota Dinas Luar </a></li>
+                            <li><a href="<?php echo base_url();?>Nota/nota"><i class="fa fa-check"></i> Nota Dinas Luar </a></li>
                         </ul>
                     </li>
                    
