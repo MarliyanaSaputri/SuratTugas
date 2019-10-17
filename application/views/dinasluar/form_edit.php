@@ -54,8 +54,8 @@
 					                   <label for="firstname" class="col-md-3">
 							                Tanggal Pelaksanaan 
 							            </label>
-					                  <div class="col-sm-3">
-					                     <input type="text" class="form-control" value ="<?php echo date("d-m-Y",strtotime($dl['tgl_pelaksanaan']))?>" id="range_tgl" name="tgl_pelaksanaan">
+					                  <div class="col-sm-5">
+					                     <input type="text" class="form-control" value ="<?php echo date("d/m/Y",strtotime($dl['tgl_pelaksanaan'])).'-'. date("d/m/Y",strtotime($dl['tgl_akhir']))?>" id="range_tgl" name="tgl_pelaksanaan">
 					                  </div>
 					                  
 					                </div>
@@ -168,7 +168,7 @@
 						                "showDropdowns": true,
 						                "autoApply": true,
 						             }, function(start, end, label) {
-						                $('#range_tgl').val(start.format('DD/MM/YYYY')+" - "+end.format('DD/MM/YYYY'))
+						                $('#range_tgl').val(start.format('DD/MM/YYYY')+"-"+end.format('DD/MM/YYYY'))
 						            });
 
 						        });
