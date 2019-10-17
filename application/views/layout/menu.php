@@ -49,6 +49,10 @@
                         </ul>
                     </li>
                    
+                     <?php if($this->fungsi->user_login()->level == 1) { ?>
+                    <li><a href="<?php echo base_url();?>User"><i class="fa fa-user"></i> User</a></li>
+                     <?php } ?>
+
                 </ul>
                  
                 <ul class="nav navbar-nav navbar-right navbar-user">
@@ -57,7 +61,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?=ucfirst
                         ($this->fungsi->user_login()->username)?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="divider"></li>
+                          
                             <li><a href="<?=site_url('auth/logout')?>"><i class="fa fa-power-off"></i> Log Out</a></li>
                         </ul>
                     </li>
