@@ -190,14 +190,17 @@ class  DinasLuar extends CI_Controller {
 		
 			foreach ($cek as $result)
 			{
-				$no_st=$result['no_st'];
-				$NIP= $result['NIP'];
+				$no_st = $result['no_st'];
+				$NIP = $result['NIP'];
 				$tgl_pelaksanaan = $result['tgl_pelaksanaan'];
 				$tgl_akhir = $result['tgl_akhir'];
 				$maksud_tujuan = $result['maksud_tujuan'];
 				$daerah_tujuan = $result['daerah_tujuan'];
 				$peserta_hadir = $result['peserta_hadir'];
 				$bahasan = $result['bahasan'];
+				$tgl_pembuatan = $result['tgl_pembuatan'];
+				$tgl_pembuatan = date("d F Y",strtotime($tgl_pembuatan));
+				$lain = $result['lain-lain'];
 			}
 
 			foreach ($cek1 as $result)
@@ -216,7 +219,9 @@ class  DinasLuar extends CI_Controller {
 				'maksud_tujuan'=>$maksud_tujuan,
 				'peserta_hadir'=>$peserta_hadir,
 				'daerah_tujuan'=>$daerah_tujuan,
-				'nama'=>$nama
+				'nama'=>$nama,
+				'tgl_pembuatan'=>$tgl_pembuatan,
+				'lain-lain'=>$lain
 				// 'jabatan'=>$jabatan,
 				// 'pangkat'=>$pangkat,
 				// 'golongan'=>$golongan

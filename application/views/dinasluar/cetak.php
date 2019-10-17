@@ -120,7 +120,7 @@ class pdf extends FPDF{
 		$this->SetXY(21,35);
 		$this->Cell(40);
 	
-		}
+	}
 
 	function bahasan($bahasan){
 		$this->SetFont('Times','',12);
@@ -134,12 +134,66 @@ class pdf extends FPDF{
 		$this->SetXY(21,35);
 		$this->Cell(40);
 	
-		}
-	
-
-
-	
 	}
+	
+
+	function petunjuk(){
+		$this->Ln(5);
+		$this->SetFont('Times','',12);
+		$this->SetXY(17,30);
+		$this->Cell(0,5,'VIII   Petunjuk Arahan',0,1,'L');
+		$this->SetXY(15,30);
+		$this->Cell(50);
+		$this->Cell(130,5,': ','J');
+		$this->SetXY(28,37);
+		$this->Cell(0,5,'Saran dan',0,1,'L');
+		$this->SetXY(28,42);
+		$this->Cell(0,5,'Tindakan',0,1,'L');
+		$this->SetXY(37,37);
+		$this->Cell(28);
+		$this->Cell(130,5,': ','J');
+	}
+	
+	function lain_lain($lain){
+		$this->Ln(5);
+		$this->SetFont('Times','',12);
+		$this->SetXY(17,52);
+		$this->Cell(0,5,'X        Lain-Lain',0,1,'L');
+		$this->SetXY(37,52);
+		$this->Cell(28);
+		$this->Cell(130,5,': ','J');
+		$this->SetXY(42,52);
+		$this->Cell(28);
+		$this->MultiCell(130,5,$lain,0,1,'L');
+	}
+	
+	function penanggung($nama,$nip){
+		$this->Ln(5);
+		$this->SetFont('Times','',12);
+		$this->SetXY(17,230);
+		$this->Cell(0,5,'XI    Penanggung Jawab',0,1,'L');
+		$this->SetXY(37,230);
+		$this->Cell(28);
+		$this->Cell(130,5,': ','J');
+		$this->SetXY(28,260);
+		$this->Cell(0,5,$nama,0,1,'L');
+		$this->SetXY(28,266);
+		$this->Cell(0,5,'NIP. '.$nip,0,1,'L');
+	}
+
+	function ttd($tgl_pembuatan){
+		$this->Ln(5);
+		$this->SetXY(32,240);
+		$this->Cell(95);
+		$this->Cell(0,5,'Surabaya ,  '.$tgl_pembuatan,0,1,'L');
+		$this->SetXY(24,270);
+		$this->Cell(100);
+		$this->Cell(0,5,'Tanda Tangan        ......................',0,1,'L');	
+	}
+
+
+	
+}
 
 //instantisasi objek
 $pdf=new pdf();
@@ -155,22 +209,23 @@ $pdf->AddPage('P', 'A4');
  $pdf->judul2('LAPORAN DINAS LUAR','Nomor :',$no_st);
 
 // //isi
- $pdf->dasar();
- $pdf->maksud($maksud_tujuan);
- $pdf->tugas($nama);
+$pdf->dasar();
+$pdf->maksud($maksud_tujuan);
+$pdf->tugas($nama);
 $pdf->daerah($daerah_tujuan);
 $pdf->jadwal($tgl_pelaksanaan,$tgl_akhir);
 $pdf->hadir($peserta_hadir);
 $pdf->bahasan($bahasan);
-// $pdf->judul3();
-// $pdf->kepada();
-// $pdf->tujuan('Untuk');
+$pdf->petunjuk();
+$pdf->lain_lain($lain);
+$pdf->penanggung($nama,$nip);
+$pdf->ttd($tgl_pembuatan);
 
-//tanda tangan kepbag
-//$pdf->ttd();
+$date = date('d-M-Y  h:i:s');
+
 //$pdf->kepala();
-//$date = date('d-M-Y  h:i:s');
 //$pdf->legalitas('printed on: '.$date.' by '.$nama.' '.$id );
+
 $pdf->Output('laporan_dinas_luar'.'.pdf','I');
 ?>
 }
