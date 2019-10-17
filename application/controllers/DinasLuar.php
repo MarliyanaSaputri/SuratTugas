@@ -131,10 +131,10 @@ class  DinasLuar extends CI_Controller {
 		$maksud = $this->input->post('maksud_tujuan');
 		$range_tgl = $this->input->post('tgl_pelaksanaan');
 		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
-		'-'.substr($range_tgl,0,2) ;
-		$range_tgl2 = $this->input->post('tgl_pelaksanaan');
-		$range_tgl2 =  substr($range_tgl2,17,4) . '-'.substr($range_tgl2,14,2) . 
-		'-'.substr($range_tgl2,11,2) ;
+	'-'.substr($range_tgl,0,2) ;
+	//	$range_tgl = $this->input->post('tgl_akhir');
+	//	$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
+	//'-'.substr($range_tgl,0,2) ;
 		$hadir = $this->input->post('peserta_hadir');
 		$hadir2 = $this->input->post('hadir2');
 		$hadir3 = $this->input->post('hadir3');
@@ -144,7 +144,7 @@ class  DinasLuar extends CI_Controller {
 		$lain = $this->input->post('lain-lain');
 		$tgl_buat = $this->input->post('tgl_pembuatan');
 		$tgl_buat =  substr($tgl_buat,6,4) . '-'.substr($tgl_buat,3,2) . 
-		'-'.substr($tgl_buat,0,2) ;
+	'-'.substr($tgl_buat,0,2) ;
 
 		$data = array(   
 			//'id_dl'	=> $id,	//data yang akan ditambah pada table 
@@ -152,7 +152,7 @@ class  DinasLuar extends CI_Controller {
 			'NIP' => $nip,
 			'maksud_tujuan' => $maksud,
 			'tgl_pelaksanaan' => $range_tgl,
-			'tgl_akhir' => $range_tgl2,
+			//'tgl_akhir' => $range_tgl,
 			'peserta_hadir' => $hadir,
 			'hadir2' => $hadir2,
 			'hadir3' => $hadir3,
@@ -169,6 +169,66 @@ class  DinasLuar extends CI_Controller {
 		
 		$this->daftar_model->update_data($where,$data,'tb_dl');
 		redirect('DinasLuar');
+	}
+
+	public function cetak()
+	{
+
+
+		$tabel = "tb_dl";	
+		$tabeljoin = "tb_pegawai";
+		$wherejoin ="NIP"; 
+		$wherejb = array('jabatan');
+		$where = array('id_dl'=>$no); 
+		$id= $no; 
+		$cek1= $this->daftar_model->get_cariall($tabel,$tabeljoin,$wherejoin,$id);
+		$cek=$this->daftar_model->cari_data($tabel,$where);
+		$cek2=$this->daftar_model->cari_data($tabeljoin,$wherejb);
+			foreach ($cek as $result)
+			{
+				$no_st=$result['no_st'];
+				$NIP= $result['NIP'];
+				$tgl_pelaksanaan = $result['tgl_pelaksanaan'];
+				$tgl_akhir = $result['tgl_akhir'];
+				$maksud_tujuan = $result['maksud_tujuan'];
+				$daerah_tujuan = $result['daerah_tujuan'];
+				$peserta_hadir = $result['peserta_hadir'];
+				$bahasan = $result['bahasan'];
+			}
+
+			foreach ($cek1 as $result)
+			{
+				$nip=$NIP;
+				$nama=$result['nama'];
+				$jabatan=$result['jabatan'];
+				$pangkat=$result['pangkat'];
+				$golongan=$result['golongan'];
+			}
+
+			foreach ($cek2 as $result)
+			{
+				$nipkp=$result['NIP'];
+				$namakp=$result['nama'];
+				$pangkatkp=$result['pangkat'];
+			}
+
+			$data=array('id_dl'=>$no,
+				'no_st'=>$no_st,
+				'NIP'=>$NIP,
+				'tgl_pelaksanaan'=>$tgl_pelaksanaan,
+				'tgl_akhir'=>$tgl_akhir,
+				'bahasan'=>$bahasan,
+				'maksud_tujuan'=>$maksud_tujuan,
+				'peserta_hadir'=>$peserta_hadir,
+				'daerah_tujuan'=>$daerah_tujuan,
+				'nama'=>$nama,
+				'jabatan'=>$jabatan,
+				'pangkat'=>$pangkat,
+				'golongan'=>$golongan
+				
+			);
+
+			$this->load->view('dinasluar/cetak',$data);
 	}
 
 
