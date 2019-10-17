@@ -6,8 +6,12 @@ class  DinasLuar extends CI_Controller {
 	public function __construct() 
 	{
 		parent::__construct();
-		check_not_login();
 		$this->load->model('daftar_model');
+		check_not_login();
+		$this->load->config('pdf_config');
+		$this->load->library('fpdf');
+		$this->load->library('PDF_Code128');
+		define ('FPDF_FONTPATH',$this->config->item('fonts_path'));
 	}
 
 	public function index()
@@ -171,19 +175,19 @@ class  DinasLuar extends CI_Controller {
 		redirect('DinasLuar');
 	}
 
-	public function cetak()
+	public function cetak($no)
 	{
 
-
+		$id= $no; 
 		$tabel = "tb_dl";	
 		$tabeljoin = "tb_pegawai";
 		$wherejoin ="NIP"; 
 		$wherejb = array('jabatan');
 		$where = array('id_dl'=>$no); 
-		$id= $no; 
+		
 		$cek1= $this->daftar_model->get_cariall($tabel,$tabeljoin,$wherejoin,$id);
 		$cek=$this->daftar_model->cari_data($tabel,$where);
-		$cek2=$this->daftar_model->cari_data($tabeljoin,$wherejb);
+		
 			foreach ($cek as $result)
 			{
 				$no_st=$result['no_st'];
@@ -200,18 +204,9 @@ class  DinasLuar extends CI_Controller {
 			{
 				$nip=$NIP;
 				$nama=$result['nama'];
-				$jabatan=$result['jabatan'];
-				$pangkat=$result['pangkat'];
-				$golongan=$result['golongan'];
 			}
 
-			foreach ($cek2 as $result)
-			{
-				$nipkp=$result['NIP'];
-				$namakp=$result['nama'];
-				$pangkatkp=$result['pangkat'];
-			}
-
+			
 			$data=array('id_dl'=>$no,
 				'no_st'=>$no_st,
 				'NIP'=>$NIP,
@@ -221,10 +216,10 @@ class  DinasLuar extends CI_Controller {
 				'maksud_tujuan'=>$maksud_tujuan,
 				'peserta_hadir'=>$peserta_hadir,
 				'daerah_tujuan'=>$daerah_tujuan,
-				'nama'=>$nama,
-				'jabatan'=>$jabatan,
-				'pangkat'=>$pangkat,
-				'golongan'=>$golongan
+				'nama'=>$nama
+				// 'jabatan'=>$jabatan,
+				// 'pangkat'=>$pangkat,
+				// 'golongan'=>$golongan
 				
 			);
 

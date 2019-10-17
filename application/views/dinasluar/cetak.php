@@ -52,7 +52,10 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Tujuan '  ,0,1,'L');
 		$this->SetXY(20,110);
 		$this->Cell(30);
-		$this->MultiCell(130,5,': '.$maksud_tujuan,'J');
+		$this->MultiCell(130,5,': ','J');
+		$this->SetXY(25,110);
+		$this->Cell(30);
+		$this->MultiCell(130,5,$maksud_tujuan,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
 	
@@ -75,7 +78,7 @@ class pdf extends FPDF{
 		
 	}
 
-	function daerah($daerah_tujuan\){
+	function daerah($daerah_tujuan){
 		$this->SetFont('Times','',12);
 		$this->SetXY(14,150);
 		$this->Cell(0,5,'IV'  ,0,1,'L');
@@ -149,25 +152,25 @@ $pdf->AddPage('P', 'A4');
 
 //meletakkan judul disamping logo diatas
 
-$pdf->judul2('LAPORAN DINAS LUAR','Nomor :',$nost);
+ $pdf->judul2('LAPORAN DINAS LUAR','Nomor :',$no_st);
 
-//isi
-$pdf->dasar();
-$pdf->maksud();
-$pdf->tugas();
-$pdf->daerah();
-$pdf->jadwal();
-$pdf->hadir();
-$pdf->bahasan();
-//$pdf->judul3();
-//$pdf->kepada();
-//$pdf->tujuan('Untuk');
+// //isi
+ $pdf->dasar();
+ $pdf->maksud($maksud_tujuan);
+ $pdf->tugas($nama);
+$pdf->daerah($daerah_tujuan);
+$pdf->jadwal($tgl_pelaksanaan,$tgl_akhir);
+$pdf->hadir($peserta_hadir);
+$pdf->bahasan($bahasan);
+// $pdf->judul3();
+// $pdf->kepada();
+// $pdf->tujuan('Untuk');
 
 //tanda tangan kepbag
 //$pdf->ttd();
 //$pdf->kepala();
 //$date = date('d-M-Y  h:i:s');
 //$pdf->legalitas('printed on: '.$date.' by '.$nama.' '.$id );
-$pdf->Output('laporan_dinas_luar','.pdf','I');
+$pdf->Output('laporan_dinas_luar'.'.pdf','I');
 ?>
 }
