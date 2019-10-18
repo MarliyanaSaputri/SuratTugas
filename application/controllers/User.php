@@ -19,7 +19,11 @@ class User extends CI_Controller {
 	{
 
 		$data['row'] = $this->user_m->get();
-		$this->template->load('template', 'user/user_data', $data);
+		$data=array('title'=>'DataUser',
+		 'isi' =>'user/user_data'
+		 );
+
+		$this->load->view('layout/wrapper',$data);
 	}
 
 
@@ -62,6 +66,12 @@ class User extends CI_Controller {
 
 		{
 			$this->template->load('template', 'user/user_from_add');
+			
+			$data=array('title'=>'TambahUser',
+			 'isi' =>'user/user_from_add'
+		 );
+
+		$this->load->view('layout/wrapper',$data);
 
 		} else {
 			$post = $this->input->post(null, TRUE);
@@ -151,7 +161,12 @@ class User extends CI_Controller {
 			$query = $this->user_m->get($id);
 			if ($query->num_rows() > 0) {
 				$data['row'] = $query->row();
-			$this->template->load('template', 'user/user_form_edit', $data);
+				
+				$data=array('title'=>'EditUser',
+		 		'isi' =>'user/user_form_edit'
+		 );
+
+		$this->load->view('layout/wrapper',$data);
 		} else {
 
 			echo "<script>alert('Data Tidak diTemukan');";
