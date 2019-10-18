@@ -201,6 +201,9 @@ class  DinasLuar extends CI_Controller {
 				$tgl_pembuatan = $result['tgl_pembuatan'];
 				$tgl_pembuatan = date("d F Y",strtotime($tgl_pembuatan));
 				$lain = $result['lain-lain'];
+				$hadir2 = $result['hadir2'];
+				$hadir3 = $result['hadir3'];
+				$hadir4 = $result['hadir4'];
 			}
 
 			foreach ($cek1 as $result)
@@ -221,12 +224,17 @@ class  DinasLuar extends CI_Controller {
 				'daerah_tujuan'=>$daerah_tujuan,
 				'nama'=>$nama,
 				'tgl_pembuatan'=>$tgl_pembuatan,
-				'lain-lain'=>$lain
+				'lain-lain'=>$lain,
+				'hadir2'=>$hadir2,
+				'hadir3'=>$hadir3,
+				'hadir4'=>$hadir4
+			
+			);              
 				// 'jabatan'=>$jabatan,
 				// 'pangkat'=>$pangkat,
 				// 'golongan'=>$golongan
 				
-			);
+			
 
 			$this->load->view('dinasluar/cetak',$data);
 	}
