@@ -1,3 +1,6 @@
+<div id="page-wrapper">
+            
+                   
 <div class="row">
 	
 	<section class="content-header">
@@ -44,6 +47,7 @@
                                 <tbody>
 
                                 <?php $no = 1;
+                           
                                 foreach ($row->result() as $key => $data) { ?>
                                         <tr>
                                                 <td class="text-center"><?=$no++?>.</td>
