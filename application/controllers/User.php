@@ -18,8 +18,9 @@ class User extends CI_Controller {
 	public function index()
 	{
 
-		$data['row'] = $this->user_m->get();
+	
 		$data=array('title'=>'DataUser',
+			'row' => $this->user_m->get(), 
 		 'isi' =>'user/user_data'
 		 );
 
@@ -65,7 +66,7 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 
 		{
-			$this->template->load('template', 'user/user_from_add');
+			
 			
 			$data=array('title'=>'TambahUser',
 			 'isi' =>'user/user_from_add'
@@ -153,6 +154,8 @@ class User extends CI_Controller {
 		$this->form_validation->set_message('is_unique', '%s ini sudah digunakan, silahkan pilih nama yang lain');
 
 		$this->form_validation->set_error_delimiters('<span class="help-block">' , '</span>');
+
+		
 
 
 		if ($this->form_validation->run() == FALSE)

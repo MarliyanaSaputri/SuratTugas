@@ -1,6 +1,6 @@
-<div class="page-wrapper">
-<div class="row">
-	
+    <div class="page-wrapper">
+         <div class="col-lg-12">
+  
 	<section class="content-header">
 		
                 <h1>User
