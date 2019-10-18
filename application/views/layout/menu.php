@@ -50,7 +50,7 @@
                     </li>
                    
                      <?php if($this->fungsi->user_login()->level == 1) { ?>
-                    <li><a href="<?php echo base_url();?>User"><i class="fa fa-user"></i> User</a></li>
+                    <li><a href="<?=site_url('user')?>"><i class="fa fa-user"></i> User</a></li>
                      <?php } ?>
 
                 </ul>
