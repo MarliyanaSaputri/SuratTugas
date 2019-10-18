@@ -7,7 +7,7 @@ class pdf extends FPDF{
 		$this->SetFont('Times','UB',12);
 		$this->Cell(0,5,$teks,0,1,'C');
 		$this->SetFont('Times','B',12);
-		$this->Cell(160,7,$teks1.$teks2,0,1,'C');
+		$this->Cell(195,7,$teks1. $teks2,0,1,'C');
 	}
 	
 	function dasar(){
@@ -21,25 +21,25 @@ class pdf extends FPDF{
 		$this->MultiCell(130,5,':   1. ','J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
-		$this->MultiCell(130,5,'Peraturan Daerah Provinsi Jawa Timur No.11 Tahun 2018 Tanggal 28 Desember 2018 tentang Anggaran Pendapatan dan Belanja Daerah  Tahun Anggaran 2019;',76,'J');
+		$this->MultiCell(120,5,'Peraturan Daerah Provinsi Jawa Timur No.11 Tahun 2018 Tanggal 28 Desember 2018 tentang Anggaran Pendapatan dan Belanja Daerah  Tahun Anggaran 2019;',76,'J');
 		$this->SetXY(14,37);
 		$this->Cell(40);
 		$this->MultiCell(130,32,'2. ','J');
 		$this->SetXY(21,50);
 		$this->Cell(40);
-		$this->MultiCell(130,5,'Peraturan Gubernur Jawa Timur Nomor : 128 Tahun 2018 Tanggal Desember 2018 tentang Anggaran Pendapatan dan Belanja Daerah Provinsi Jawa Timur Tahun Anggaran 2019.');
+		$this->MultiCell(120,5,'Peraturan Gubernur Jawa Timur Nomor : 128 Tahun 2018 Tanggal Desember 2018 tentang Anggaran Pendapatan dan Belanja Daerah Provinsi Jawa Timur Tahun Anggaran 2019.');
 		$this->SetXY(14,65);
 		$this->Cell(40);
 		$this->MultiCell(130,5,'3. ','J');
 		$this->SetXY(21,65);
 		$this->Cell(40);
-		$this->MultiCell(130,5,'Keputusan Gubernur Jawa Timur Nomor : 903/279/203.2/2018 Tanggal 31 Desember 2018 tentang Penetapan Dokumen Pelaksanaan Anggaran Satuan Kerja Perangkat Daerah (DPA-SKPD) Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran 2019. ','J');
+		$this->MultiCell(125,5,'Keputusan Gubernur Jawa Timur Nomor : 903/279/203.2/2018 Tanggal 31 Desember 2018 tentang Penetapan Dokumen Pelaksanaan Anggaran Satuan Kerja Perangkat Daerah (DPA-SKPD) Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran 2019. ','J');
 		$this->SetXY(14,85);
 		$this->Cell(40);
 		$this->MultiCell(130,5,'4. ','J');
 		$this->SetXY(21,85);
 		$this->Cell(40);
-		$this->MultiCell(130,5,'Peraturan Gubernur Jawa Timur Nomor : 92 Tahun 2018 Tanggal 21 September 2018 tentang Pedoman Kerja dan Pelaksanaan Tugas Pemerintah Daerah Provinsi Jawa Timur Tahun 2019. ','J');
+		$this->MultiCell(118,5,'Peraturan Gubernur Jawa Timur Nomor : 92 Tahun 2018 Tanggal 21 September 2018 tentang Pedoman Kerja dan Pelaksanaan Tugas Pemerintah Daerah Provinsi Jawa Timur Tahun 2019. ','J');
 	}
 
 	function maksud($maksud_tujuan){
@@ -216,10 +216,10 @@ $pdf->daerah($daerah_tujuan);
 $pdf->jadwal($tgl_pelaksanaan,$tgl_akhir);
 $pdf->hadir($peserta_hadir);
 $pdf->bahasan($bahasan);
-$pdf->petunjuk();
-$pdf->lain_lain($lain);
-$pdf->penanggung($nama,$nip);
-$pdf->ttd($tgl_pembuatan);
+//$pdf->petunjuk();
+//$pdf->lain_lain($lain);
+//$pdf->penanggung($nama,$nip);
+//$pdf->ttd($tgl_pembuatan);
 
 $date = date('d-M-Y  h:i:s');
 
