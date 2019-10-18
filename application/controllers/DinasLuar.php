@@ -193,7 +193,9 @@ class  DinasLuar extends CI_Controller {
 				$no_st = $result['no_st'];
 				$NIP = $result['NIP'];
 				$tgl_pelaksanaan = $result['tgl_pelaksanaan'];
+				$tgl_pelaksanaan = date("d F Y",strtotime($tgl_pelaksanaan));
 				$tgl_akhir = $result['tgl_akhir'];
+				$tgl_akhir = date("d F Y",strtotime($tgl_akhir));
 				$maksud_tujuan = $result['maksud_tujuan'];
 				$daerah_tujuan = $result['daerah_tujuan'];
 				$peserta_hadir = $result['peserta_hadir'];

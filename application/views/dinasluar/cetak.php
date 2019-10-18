@@ -105,7 +105,7 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Jadwal Waktu'  ,0,1,'L');
 		$this->SetXY(24,165);
 		$this->Cell(38);
-		$this->MultiCell(130,5,': '.$tgl_pelaksanaan,'-'.$tgl_akhir,'J');
+		$this->MultiCell(130,5,': '.$tgl_pelaksanaan. ' - '.$tgl_akhir,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
 		
