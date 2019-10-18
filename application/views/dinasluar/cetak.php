@@ -16,33 +16,30 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'I'  ,0,1,'L');
 		$this->SetXY(24,35);
 		$this->Cell(0,5,'Dasar'  ,0,1,'L');
-		$this->SetXY(24,35);
-		$this->Cell(38);
-		$this->MultiCell(130,5,':   ','J');
-		$this->SetXY(27,35);
-		$this->Cell(38);
-		$this->MultiCell(130,5,'1. ','J');
-		$this->SetXY(27,35);
-		$this->Cell(45);
+		$this->SetXY(20,35);
+		$this->Cell(30);
+		$this->MultiCell(130,5,':   1. ','J');
+		$this->SetXY(21,35);
+		$this->Cell(40);
 		$this->MultiCell(120,5,'Peraturan Daerah Provinsi Jawa Timur No.11 Tahun 2018 Tanggal 28 Desember 2018 tentang Anggaran Pendapatan dan Belanja Daerah  Tahun Anggaran 2019;',76,'J');
-		$this->SetXY(27,37);
-		$this->Cell(38);
+		$this->SetXY(14,37);
+		$this->Cell(40);
 		$this->MultiCell(130,32,'2. ','J');
-		$this->SetXY(27,50);
-		$this->Cell(45);
+		$this->SetXY(21,50);
+		$this->Cell(40);
 		$this->MultiCell(120,5,'Peraturan Gubernur Jawa Timur Nomor : 128 Tahun 2018 Tanggal Desember 2018 tentang Anggaran Pendapatan dan Belanja Daerah Provinsi Jawa Timur Tahun Anggaran 2019.');
-		$this->SetXY(27,65);
-		$this->Cell(38);
+		$this->SetXY(14,65);
+		$this->Cell(40);
 		$this->MultiCell(130,5,'3. ','J');
-		$this->SetXY(27,65);
-		$this->Cell(45);
-		$this->MultiCell(120,5,'Keputusan Gubernur Jawa Timur Nomor : 903/279/203.2/2018 Tanggal 31 Desember 2018 tentang Penetapan Dokumen Pelaksanaan Anggaran Satuan Kerja Perangkat Daerah (DPA-SKPD) Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran 2019. ','J');
-		$this->SetXY(27,90);
-		$this->Cell(38);
+		$this->SetXY(21,65);
+		$this->Cell(40);
+		$this->MultiCell(125,5,'Keputusan Gubernur Jawa Timur Nomor : 903/279/203.2/2018 Tanggal 31 Desember 2018 tentang Penetapan Dokumen Pelaksanaan Anggaran Satuan Kerja Perangkat Daerah (DPA-SKPD) Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran 2019. ','J');
+		$this->SetXY(14,85);
+		$this->Cell(40);
 		$this->MultiCell(130,5,'4. ','J');
-		$this->SetXY(27,90);
-		$this->Cell(45);
-		$this->MultiCell(120,5,'Peraturan Gubernur Jawa Timur Nomor : 92 Tahun 2018 Tanggal 21 September 2018 tentang Pedoman Kerja dan Pelaksanaan Tugas Pemerintah Daerah Provinsi Jawa Timur Tahun 2019. ','J');
+		$this->SetXY(21,85);
+		$this->Cell(40);
+		$this->MultiCell(118,5,'Peraturan Gubernur Jawa Timur Nomor : 92 Tahun 2018 Tanggal 21 September 2018 tentang Pedoman Kerja dan Pelaksanaan Tugas Pemerintah Daerah Provinsi Jawa Timur Tahun 2019. ','J');
 	}
 
 	function maksud($maksud_tujuan){
@@ -53,13 +50,11 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Maksud dan '  ,0,1,'L');
 		$this->SetXY(24,116);
 		$this->Cell(0,5,'Tujuan '  ,0,1,'L');
-
-
-		$this->SetXY(24,110);
-		$this->Cell(38);
+		$this->SetXY(20,110);
+		$this->Cell(30);
 		$this->MultiCell(130,5,': ','J');
-		$this->SetXY(27,110);
-		$this->Cell(38);
+		$this->SetXY(25,110);
+		$this->Cell(30);
 		$this->MultiCell(130,5,$maksud_tujuan,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
@@ -75,8 +70,8 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Yang'  ,0,1,'L');
 		$this->SetXY(24,131);
 		$this->Cell(0,14,'di Tugaskan '  ,0,1,'L');
-		$this->SetXY(24,130);
-		$this->Cell(38);
+		$this->SetXY(20,130);
+		$this->Cell(30);
 		$this->MultiCell(130,5,': '.$nama,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
@@ -89,8 +84,8 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'IV'  ,0,1,'L');
 		$this->SetXY(24,150);
 		$this->Cell(0,5,'Daerah Tujuan'  ,0,1,'L');
-		$this->SetXY(24,150);
-		$this->Cell(38);
+		$this->SetXY(20,150);
+		$this->Cell(30);
 		$this->MultiCell(130,5,': '.$daerah_tujuan,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
@@ -103,9 +98,9 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'V'  ,0,1,'L');
 		$this->SetXY(24,165);
 		$this->Cell(0,5,'Jadwal Waktu'  ,0,1,'L');
-		$this->SetXY(24,165);
-		$this->Cell(38);
-		$this->MultiCell(130,5,': '.$tgl_pelaksanaan. ' - '.$tgl_akhir,'J');
+		$this->SetXY(20,165);
+		$this->Cell(30);
+		$this->MultiCell(130,5,': '.$tgl_pelaksanaan,'-'.$tgl_akhir,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
 		
@@ -119,8 +114,8 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Hadir Dalam '  ,0,1,'L');
 		$this->SetXY(24,188);
 		$this->Cell(0,5,'Acara '  ,0,1,'L');
-		$this->SetXY(24,182);
-		$this->Cell(38);
+		$this->SetXY(20,182);
+		$this->Cell(30);
 		$this->MultiCell(130,5,': '.$peserta_hadir,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
@@ -133,8 +128,8 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'VII'  ,0,1,'L');
 		$this->SetXY(24,202);
 		$this->Cell(0,5,'Bahasan '  ,0,1,'L');
-		$this->SetXY(24,202);
-		$this->Cell(38);
+		$this->SetXY(20,202);
+		$this->Cell(30);
 		$this->MultiCell(130,5,': '.$bahasan,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
@@ -143,57 +138,55 @@ class pdf extends FPDF{
 	
 
 	function petunjuk(){
-		$this->Ln(5);
 		$this->SetFont('Times','',12);
-		$this->SetXY(17,30);
+		$this->SetXY(14,330);
 		$this->Cell(0,5,'VIII   Petunjuk Arahan',0,1,'L');
-		$this->SetXY(15,30);
-		$this->Cell(50);
+		$this->SetXY(30,10);
+		$this->Cell(30);
 		$this->Cell(130,5,': ','J');
-		$this->SetXY(28,37);
+
+		$this->SetXY(25,17);
 		$this->Cell(0,5,'Saran dan',0,1,'L');
-		$this->SetXY(28,42);
+		$this->SetXY(25,22);
 		$this->Cell(0,5,'Tindakan',0,1,'L');
-		$this->SetXY(37,37);
-		$this->Cell(28);
+		$this->SetXY(30,18);
+		$this->Cell(30);
 		$this->Cell(130,5,': ','J');
+		$this->SetXY(31,35);
+		$this->Cell(40);
 	}
 	
 	function lain_lain($lain){
-		$this->Ln(5);
 		$this->SetFont('Times','',12);
-		$this->SetXY(17,52);
-		$this->Cell(0,5,'X        Lain-Lain',0,1,'L');
-		$this->SetXY(37,52);
-		$this->Cell(28);
-		$this->Cell(130,5,': ','J');
-		$this->SetXY(42,52);
-		$this->Cell(28);
-		$this->MultiCell(130,5,$lain,0,1,'L');
+		$this->SetXY(14,35);
+		$this->Cell(0,5,'X       Lain-Lain',0,1,'L');
+		$this->SetXY(30,35);
+		$this->Cell(30);
+		$this->Cell(130,5,':  '. $lain,'J');
+		$this->SetXY(37,35);
+		$this->Cell(30);
 	}
 	
-	function penanggung($nama,$nip){
-		$this->Ln(5);
+	function penanggung($nama,$NIP){
 		$this->SetFont('Times','',12);
-		$this->SetXY(17,230);
+		$this->SetXY(14,220);
 		$this->Cell(0,5,'XI    Penanggung Jawab',0,1,'L');
-		$this->SetXY(37,230);
-		$this->Cell(28);
+		$this->SetXY(32,220);
+		$this->Cell(30);
 		$this->Cell(130,5,': ','J');
-		$this->SetXY(28,260);
+		$this->SetXY(23,250);
 		$this->Cell(0,5,$nama,0,1,'L');
-		$this->SetXY(28,266);
-		$this->Cell(0,5,'NIP. '.$nip,0,1,'L');
+		$this->SetXY(24,256);
+		$this->MultiCell(0,5,'NIP. '.$NIP,'J');
 	}
 
 	function ttd($tgl_pembuatan){
-		$this->Ln(5);
-		$this->SetXY(32,240);
+		$this->SetXY(32,230);
 		$this->Cell(95);
-		$this->Cell(0,5,'Surabaya ,  '.$tgl_pembuatan,0,1,'L');
-		$this->SetXY(24,270);
+		$this->MultiCell(0,5,'Surabaya ,  '.$tgl_pembuatan,'J');
+		$this->SetXY(24,260);
 		$this->Cell(100);
-		$this->Cell(0,5,'Tanda Tangan        ......................',0,1,'L');	
+		$this->MultiCell(0,5,'Tanda Tangan        ......................','J');	
 	}
 
 
@@ -204,14 +197,14 @@ class pdf extends FPDF{
 $pdf=new pdf();
 //properti dokumen
 $pdf->SetAuthor('DISKOMINFOJATIM');
-$pdf->SetTitle('LAPORAN  DINAS  LUAR');
+$pdf->SetTitle('LAPORAN DINAS LUAR');
 //Mulai dokumen
 $pdf->AddPage('P', 'A4');
 //meletakkan gambar
 
 //meletakkan judul disamping logo diatas
 
- $pdf->judul2('LAPORAN  DINAS  LUAR','Nomor :',$no_st);
+ $pdf->judul2('LAPORAN DINAS LUAR','Nomor :',$no_st);
 
 // //isi
 $pdf->dasar();
@@ -221,10 +214,10 @@ $pdf->daerah($daerah_tujuan);
 $pdf->jadwal($tgl_pelaksanaan,$tgl_akhir);
 $pdf->hadir($peserta_hadir);
 $pdf->bahasan($bahasan);
-//$pdf->petunjuk();
-//$pdf->lain_lain($lain);
-//$pdf->penanggung($nama,$nip);
-//$pdf->ttd($tgl_pembuatan);
+$pdf->petunjuk();
+$pdf->lain_lain($lain);
+$pdf->penanggung($nama,$NIP);
+$pdf->ttd($tgl_pembuatan);
 
 $date = date('d-M-Y  h:i:s');
 

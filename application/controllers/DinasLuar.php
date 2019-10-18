@@ -226,7 +226,7 @@ class  DinasLuar extends CI_Controller {
 				'daerah_tujuan'=>$daerah_tujuan,
 				'nama'=>$nama,
 				'tgl_pembuatan'=>$tgl_pembuatan,
-				'lain-lain'=>$lain,
+				'lain'=>$lain,
 				'hadir2'=>$hadir2,
 				'hadir3'=>$hadir3,
 				'hadir4'=>$hadir4
