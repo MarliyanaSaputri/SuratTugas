@@ -155,21 +155,19 @@ class User extends CI_Controller {
 
 		$this->form_validation->set_error_delimiters('<span class="help-block">' , '</span>');
 
-		
-
 
 		if ($this->form_validation->run() == FALSE)
 
 		{
 			$query = $this->user_m->get($id);
 			if ($query->num_rows() > 0) {
-				$data['row'] = $query->row();
 				
-				$data=array('title'=>'EditUser',
-		 		'isi' =>'user/user_form_edit'
-		 );
 
-		$this->load->view('layout/wrapper',$data);
+				$data = array ('row'=>$query->row(),
+					'isi'=> 'user/user_form_edit');
+
+				$this->load->view('layout/wrapper',$data);
+			
 		} else {
 
 			echo "<script>alert('Data Tidak diTemukan');";
