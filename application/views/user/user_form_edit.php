@@ -1,6 +1,26 @@
+<style>
+
+div.absolute {
+    position: absolute;
+    
+    right: 14px;
+    bottom: 16px;
+  
+}
+div.back {
+     position: absolute;
+    
+    right: 150px;
+   top: 50px;
+
+
+}
+</style>
+
+
 <div class="page-wrapper">
-<div class="row">
-	
+
+	<div class="col-lg-12">
 	<section class="content-header">
 		
                 <h1>User
@@ -22,9 +42,10 @@
                 <div class="box-header">
                         <h3 class="box-title text-center">Edit User</h3>
                         <div class="pull-right">
-                                <a href="<?=site_url('user')?>" class="btn btn-warning btn-flat">
+                                <div class="back"><a href="<?=site_url('user')?>" class="btn btn-warning btn-flat">
                                         <i class="fa fa-undo"></i> Back
                                 </a>
+                            </div>
 
                         </div>
                 </div>
@@ -70,8 +91,7 @@
 </div>
 <div class="form-group">
 	<button type="submit" class="btn btn-success btn-flat"><i class="fa fa-play"></i> Save</button>
-	<button type="reset" class="btn btn-danger btn-flat"><i class="fa fa-undo"></i> Reset</button>
-</div>
+	<div class="absolute"><button type="reset" class="btn btn-danger btn-flat"><i class="fa fa-undo"></i> Reset</button></div>
 
 
 </div>
