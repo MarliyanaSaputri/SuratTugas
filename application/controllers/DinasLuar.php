@@ -146,9 +146,9 @@ class  DinasLuar extends CI_Controller {
 		$range_tgl = $this->input->post('tgl_pelaksanaan');
 		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
 	'-'.substr($range_tgl,0,2) ;
-	//	$range_tgl = $this->input->post('tgl_akhir');
-	//	$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
-	//'-'.substr($range_tgl,0,2) ;
+		$range_tgl2 = $this->input->post('tgl_pelaksanaan');
+		$range_tgl2 =  substr($range_tgl2,17,4) . '-'.substr($range_tgl2,14,2) . 
+	'-'.substr($range_tgl2,11,2) ;
 		$hadir = $this->input->post('peserta_hadir');
 		$hadir2 = $this->input->post('hadir2');
 		$hadir3 = $this->input->post('hadir3');
@@ -166,7 +166,7 @@ class  DinasLuar extends CI_Controller {
 			'NIP' => $nip,
 			'maksud_tujuan' => $maksud,
 			'tgl_pelaksanaan' => $range_tgl,
-			//'tgl_akhir' => $range_tgl,
+			'tgl_akhir' => $range_tgl2,
 			'peserta_hadir' => $hadir,
 			'hadir2' => $hadir2,
 			'hadir3' => $hadir3,
@@ -195,7 +195,7 @@ class  DinasLuar extends CI_Controller {
 		$wherejb = array('jabatan');
 		$where = array('id_dl'=>$no); 
 		
-		$cek1= $this->daftar_model->get_cariall($tabel,$tabeljoin,$wherejoin,$id);
+		$cek1= $this->daftar_model->get_caridata($tabel,$tabeljoin,$wherejoin,$id);
 		$cek=$this->daftar_model->cari_data($tabel,$where);
 		
 			foreach ($cek as $result)
