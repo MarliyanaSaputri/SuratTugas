@@ -35,7 +35,7 @@ class  Surattugas extends CI_Controller {
 		$tabeljoin = "tb_pegawai";
 		$wherejoin="NIP"; 
 		$data=array('title'=>'Dasbor',
-		'daftarst' => $this->daftar_model->get_all($tabel,$wherejoin,$tabeljoin),
+		'daftarst' => $this->daftar_model->get_all($tabel,$tabeljoin,$wherejoin),
 		 'isi' =>'spt/dataspt'
 		 );
 		$this->load->view('layout/wrapper',$data);

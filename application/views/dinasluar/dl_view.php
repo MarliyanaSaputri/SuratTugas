@@ -1,17 +1,13 @@
 <div id="page-wrapper">
-    <div class="row">
-      <div class="col-lg-12">
-          <h1>DISKOMINFO</h1>
-    <!-- Main content -->
-  <section class="content">
-    <div class="row">
-    <div class="col-xs-12">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Data Dinas Luar</h3>
-			
-        </div>
-
+  <div class="col-lg-12">
+	<section class="content-header">
+        <h1>Dinas Luar
+        </h1>
+        <ol class="breadcrumb">
+        	<li><a href=""><i class="fa fa-plane"></i></a></li>
+        	<li class="active">Data Dinas Luar</li>
+        </ol>
+	</section>
 
 	</section>
 	<section class="content">

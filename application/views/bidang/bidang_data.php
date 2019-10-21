@@ -1,18 +1,12 @@
- <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>DISKOMINFO</h1>
-
-    <!-- Main content -->
-  <section class="content">
-    <div class="row">
-    <div class="col-xs-12">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Data Bidang</h3>
-			<!-- <a style="margin-bottom:10px" href="<?php echo base_url() ?>datamaster/datamaster/insertmerk/" 
-			class="btn btn-default pull-right"><span class='glyphicon glyphicon-plus'></span>  Tambah Data</a> -->
-        </div>
+<div id="page-wrapper">
+  <div class="col-lg-12">
+	<section class="content-header">
+        <h1>Bidang
+        </h1>
+        <ol class="breadcrumb">
+        	<li><a href=""><i class="fa fa-group"></i></a></li>
+        	<li class="active">Data Bidang</li>
+        </ol>
 	</section>
 <section class="content">
 	 <div class="col-xs-12">

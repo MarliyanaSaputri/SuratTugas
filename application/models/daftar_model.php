@@ -37,7 +37,7 @@ class Daftar_model extends CI_Model
 			return $query->result_array();
 		}
 
-  	public function get_all($tabel,$wherejoin,$tabeljoin){
+  	public function get_all($tabel,$tabeljoin,$wherejoin){
 		
 			$query = $this->db->query("select * from $tabel jm JOIN $tabeljoin m ON m.$wherejoin = jm.$wherejoin");
 			return $query->result_array();
