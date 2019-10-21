@@ -70,7 +70,7 @@
             $(document).on('click', '.pilih', function (e) {
                 document.getElementById("NIP").value = $(this).attr('data-nip');
                 document.getElementById("nama").value = $(this).attr('data-nama');
-                document.getElementById("pangkat").value = $(this).attr('data-pangkat') ;
+                document.getElementById("pangkat").value = $(this).attr('data-pangkat')+' - '+ $(this).attr('data-golongan') ;
                document.getElementById("jabatan").value = $(this).attr('data-jabatan') ;
                 $('#myModal').modal('hide');
             });

@@ -79,7 +79,7 @@
                                        Pangkat / Gol
                                     </label>
                                     <div class="col-sm-5">
-                                    <input type="text" readonly="" class="form-control" value="<?php echo $pg['pangkat']  ?>" id="pangkat" name="pangkat" placeholder="">
+                                    <input type="text" readonly="" class="form-control" value="<?php echo $pg['pangkat'] .' - '.  $pg['golongan']  ?>" id="pangkat" name="pangkat" placeholder="">
                                     </div>
                                     </div>
                                     <div class="form-group">
@@ -160,29 +160,7 @@
                 </div>
             </div>
         </div>   
-        <script type="text/javascript">
-//            jika dipilih, NIP akan masuk ke input dan modal di tutup
-            $(document).on('click', '.pilih', function (e) {
-                document.getElementById("NIP").value = $(this).attr('data-nip');
-                document.getElementById("nama").value = $(this).attr('data-nama');
-                document.getElementById("pangkat").value = $(this).attr('data-pangkat') + ' '+ $(this).attr('data-golongan')  ;
-                document.getElementById("golongan").value = $(this).attr('data-golongan');
-                document.getElementById("jabatan").value = $(this).attr('data-jabatan');
-                $('#myModal').modal('hide');
-            });
-//            tabel lookup mahasiswa
-            $(function () {
-                $("#lookup").dataTable();
-            });
-            // function dummy() {
-            //     var NIP = document.getElementById("NIP").value;
-            //     alert('Nomor Induk Mahasiswa ' + NIP + ' berhasil tersimpan');
-                
-            //     var ket = document.getElementById("ket").value;
-
-            //     alert('Keterangan ' + ket + ' berhasil tersimpan');
-            }
-        </script>
+       
         <script type="text/javascript">
         function price() { 
         var th = <?php echo date('Y')?>;
