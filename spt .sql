@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2019 at 04:57 AM
+-- Generation Time: Oct 21, 2019 at 03:54 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -74,13 +74,7 @@ CREATE TABLE `tb_dl` (
 --
 
 INSERT INTO `tb_dl` (`id_dl`, `id_st`, `no_st`, `NIP`, `maksud_tujuan`, `tgl_pelaksanaan`, `tgl_akhir`, `peserta_hadir`, `daerah_tujuan`, `bahasan`, `lain-lain`, `tgl_pembuatan`, `hadir2`, `hadir3`, `hadir4`) VALUES
-(1, 2, '090 / 12  / 114.3 / 2019', '19680614 199602 2 002', 'menghadiri acara jatim fair 2019 di Magetan , Surabaya yang dilaksanakan pada 3 oktober', '2019-10-31', '2019-11-30', 'Kepala Sub bagian APTIKA, Kepala dinas KOMINFO', 'Magetan', 'Jatim Smart Province', 'JATIM SMART PROVINCE', '2019-10-02', '', '', ''),
-(2, 3, '090 / 02   / 114.3 / 2019', '19680614 199602 2 002', 'jdk', '0000-00-00', '0000-00-00', 'adad', 'sby', 'hmjk', 'sdaff', '2019-10-01', NULL, NULL, NULL),
-(3, 5, '090 / 12  / 114.3 / 2019', '19680614 199602 2 002', 'ghyj', '0000-00-00', '0000-00-00', 'ms', 'klxz', 'kjl', 'kl', '2019-10-15', NULL, NULL, NULL),
-(4, 0, '090 / 4  / 114.6 / 2019', '19650909 199403 2 006', 'dfghjk', '0000-00-00', '0000-00-00', 'gfhj', 'fghjk', 'hjk', 'hjh', '2019-10-16', NULL, NULL, NULL),
-(5, 0, '096/ 99 /144.5/2019', '19680614 199602 2 002', 'fgh', '0000-00-00', '0000-00-00', 'jgh,h,h,', 'hg', 'hg', 'hg', '2019-10-15', NULL, NULL, NULL),
-(6, 0, '090 / 12  / 114.3 / 2019', '19680614 199602 2 002', 'mengisi acara', '2019-10-16', '0000-00-00', 'Ketua', 'surabaya', 'acara', 'acra', '2019-10-16', 'bendahara', '', ''),
-(7, 0, '090 / 4  / 114.6 / 2019', '19650909 199403 2 006', 'cara', '2019-10-16', '2019-10-17', 'bendahara', 'kediri', 'jghg', 'gh', '2019-10-16', 'ketua', '', '');
+(6, 1, '090 / 02   / 114.3 / 2019', '19680614 199602 2 002', 'Mendatangi Acara Ulang Tahun Jatim ', '2019-10-21', '2019-11-22', 'Kepala Dinas Kominfo Surabaya', 'Surabaya', 'Acara perayaan ulang tahun jatim\r\nAcara Perayaan Jatim di Malang\r\nAcara Perayaan Jatim di Madiun\r\nAcara Perayaan Jatim di Mojokerto\r\nAcara Perayaan Jatim di Pasuruan', 'Acara Perayaan Jatim di Surabaya\r\n', '2019-10-21', 'Sekretaris', '', '');
 
 -- --------------------------------------------------------
 
@@ -301,18 +295,20 @@ CREATE TABLE `tb_st` (
   `NIP` varchar(35) NOT NULL,
   `kd_bid` varchar(15) NOT NULL,
   `nama_tugas` text NOT NULL,
-  `tgl_pembuatan` date NOT NULL
+  `tgl_pembuatan` date NOT NULL,
+  `status` varchar(40) NOT NULL DEFAULT 'Belum_DL'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_st`
 --
 
-INSERT INTO `tb_st` (`id_st`, `no_st`, `NIP`, `kd_bid`, `nama_tugas`, `tgl_pembuatan`) VALUES
-(1, '090 / 02   / 114.3 / 2019', '19680614 199602 2 002', '114.3', 'Mendatangi acara di Surabaya', '2019-09-26'),
-(2, '090 / 12  / 114.3 / 2019', '19680614 199602 2 002', '114.3', 'Acara Jatim Expo', '2019-09-26'),
-(3, '090 / 4  / 114.6 / 2019', '19650909 199403 2 006', '114.6', 'Jatim dev', '2019-09-26'),
-(5, '096/ 99 /144.5/2019', '19680614 199602 2 002', '144.5', 'Menghadiri ', '2019-09-26');
+INSERT INTO `tb_st` (`id_st`, `no_st`, `NIP`, `kd_bid`, `nama_tugas`, `tgl_pembuatan`, `status`) VALUES
+(1, '090 / 02   / 114.3 / 2019', '19680614 199602 2 002', '114.3', 'Mendatangi acara di Surabaya', '2019-09-26', 'DL'),
+(2, '090 / 12  / 114.3 / 2019', '19680614 199602 2 002', '114.3', 'Acara Jatim Expo', '2019-09-26', 'Belum_DL'),
+(3, '090 / 4  / 114.6 / 2019', '19650909 199403 2 006', '114.6', 'Jatim dev', '2019-09-26', 'Belum_DL'),
+(5, '096/ 99 /144.5/2019', '19680614 199602 2 002', '144.5', 'Menghadiri ', '2019-09-26', 'Belum_DL'),
+(6, '094/ 199 /114.4/2019', '19650909 199403 2 006', '114.4', 'Menghadiri Acara Pembukaan Jatim Fair', '2019-10-21', 'Belum_DL');
 
 -- --------------------------------------------------------
 
@@ -411,12 +407,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `tb_dl`
 --
 ALTER TABLE `tb_dl`
-  MODIFY `id_dl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_dl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tb_st`
 --
 ALTER TABLE `tb_st`
-  MODIFY `id_st` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_st` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `user`
 --
