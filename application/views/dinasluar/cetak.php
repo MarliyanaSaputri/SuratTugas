@@ -111,7 +111,7 @@ class pdf extends FPDF{
 		
 	}
 
-	function hadir($peserta_hadir){
+	function hadir($peserta_hadir,$hadir2,$hadir3,$hadir4){
 		$this->SetFont('Times','',12);
 		$this->SetXY(14,182);
 		$this->Cell(0,5,'VI'  ,0,1,'L');
@@ -122,6 +122,15 @@ class pdf extends FPDF{
 		$this->SetXY(24,182);
 		$this->Cell(38);
 		$this->MultiCell(130,5,': '.$peserta_hadir,'J');
+		$this->SetXY(24,187);
+		$this->Cell(38);
+		$this->MultiCell(130,5,'  ' . $hadir2,'J');
+		$this->SetXY(24,192);
+		$this->Cell(38);
+		$this->MultiCell(130,5,'  ' . $hadir3,'J');
+		$this->SetXY(24,197);
+		$this->Cell(38);
+		$this->MultiCell(130,5,'  ' . $hadir4,'J');
 		$this->SetXY(21,35);
 		$this->Cell(40);
 	
@@ -129,11 +138,11 @@ class pdf extends FPDF{
 
 	function bahasan($bahasan){
 		$this->SetFont('Times','',12);
-		$this->SetXY(14,202);
+		$this->SetXY(14,212);
 		$this->Cell(0,5,'VII'  ,0,1,'L');
-		$this->SetXY(24,202);
+		$this->SetXY(24,212);
 		$this->Cell(0,5,'Bahasan '  ,0,1,'L');
-		$this->SetXY(24,202);
+		$this->SetXY(24,212);
 		$this->Cell(38);
 		$this->MultiCell(130,5,': '.$bahasan,'J');
 		$this->SetXY(21,35);
@@ -165,31 +174,31 @@ class pdf extends FPDF{
 		$this->SetFont('Times','',12);
 		$this->SetXY(14,35);
 		$this->Cell(0,5,'X       Lain-Lain',0,1,'L');
-		$this->SetXY(32,35);
-		$this->Cell(30);
-		$this->Cell(130,5,':  '. $lain,'J');
-		$this->SetXY(37,35);
-		$this->Cell(30);
+		$this->SetXY(24,35);
+		$this->Cell(38);
+		$this->MultiCell(130,5,':  '. $lain,'J');
+		$this->SetXY(21,35);
+		$this->Cell(40);
 	}
 	
 	function penanggung($nama,$NIP){
 		$this->SetFont('Times','',12);
-		$this->SetXY(14,220);
+		$this->SetXY(14,200);
 		$this->Cell(0,5,'XI    Penanggung Jawab',0,1,'L');
-		$this->SetXY(32,220);
+		$this->SetXY(32,200);
 		$this->Cell(30);
 		$this->Cell(130,5,': ','J');
-		$this->SetXY(23,250);
+		$this->SetXY(23,230);
 		$this->Cell(0,5,$nama,0,1,'L');
-		$this->SetXY(24,256);
+		$this->SetXY(24,236);
 		$this->MultiCell(0,5,'NIP. '.$NIP,'J');
 	}
 
 	function ttd($tgl_pembuatan){
-		$this->SetXY(32,230);
+		$this->SetXY(32,210);
 		$this->Cell(95);
 		$this->MultiCell(0,5,'Surabaya ,  '.$tgl_pembuatan,'J');
-		$this->SetXY(24,260);
+		$this->SetXY(24,240);
 		$this->Cell(100);
 		$this->MultiCell(0,5,'Tanda Tangan        ......................','J');	
 	}
@@ -217,7 +226,7 @@ $pdf->maksud($maksud_tujuan);
 $pdf->tugas($nama);
 $pdf->daerah($daerah_tujuan);
 $pdf->jadwal($tgl_pelaksanaan,$tgl_akhir);
-$pdf->hadir($peserta_hadir);
+$pdf->hadir($peserta_hadir,$hadir2,$hadir3,$hadir4);
 $pdf->bahasan($bahasan);
 $pdf->petunjuk();
 $pdf->lain_lain($lain);
