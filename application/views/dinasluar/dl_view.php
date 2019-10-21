@@ -48,7 +48,7 @@
 							<td align="left"><?php echo $data['daerah_tujuan']; ?></td>	
 							<td align="left"><?php echo $data['maksud_tujuan']; ?></td>
 							<td align="left">
-								<a title = "Unduh DL" class="btn btn-danger" href="<?php echo base_url() ?>DinasLuar/cetak/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-download"></span></a>
+								<a title = "Cetak DL" class="btn btn-danger" href="<?php echo base_url() ?>DinasLuar/cetak/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-file"></span></a>
 								<a title = "Edit DL" class="btn btn-danger " href="<?php echo base_url() ?>DinasLuar/update/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-edit"></span></a>
 								<a title = "Delete DL" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/delete/<?php echo $data['id_dl'];?>"><span class="glyphicon glyphicon-trash"></span></a>
 							</td>

@@ -29,9 +29,10 @@ class  DinasLuar extends CI_Controller {
 	public function tambahdl()
 	{
 		$tabel = "tb_st";
-		
+		$status = 'Belum_DL';
+		$where = array('status' => $status);
 		$data=array('title'=>'TambahDL',
-		'tambahdl' => $this->daftar_model->daftar_view($tabel),
+		'tambahdl' => $this->daftar_model->cari_data($tabel,$where),
 		 'isi' =>'dinasluar/tambahdl_view'
 		 );
 
@@ -76,9 +77,10 @@ class  DinasLuar extends CI_Controller {
 		$tgl_buat = $this->input->post('tgl_pembuatan');
 		$tgl_buat =  substr($tgl_buat,6,4) . '-'.substr($tgl_buat,3,2) . 
 	'-'.substr($tgl_buat,0,2) ;
- 
+ 		$status ="DL";
 			$data = array(   		//data yang akan ditambah pada table 
 				'id_dl' => $id_dl,
+				'id_st' => $id_st,
 				'no_st' => $nost,
 				'NIP' => $nip,
 				'maksud_tujuan' => $maksud,
@@ -93,6 +95,14 @@ class  DinasLuar extends CI_Controller {
 				'lain-lain' => $lain,
 				'tgl_pembuatan' => $tgl_buat
 			);
+				$data1 = array(   		//data yang akan ditambah pada table 
+				'status' => 'DL'
+			);
+		$where = array(
+			'no_st' => $nost
+		);
+		
+		$this->daftar_model->update_data($where,$data1,'tb_st');
 
 			$this->daftar_model->insert_data($data,'tb_dl');
 		
