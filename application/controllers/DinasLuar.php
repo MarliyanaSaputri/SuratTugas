@@ -195,7 +195,7 @@ class  DinasLuar extends CI_Controller {
 		$wherejb = array('jabatan');
 		$where = array('id_dl'=>$no); 
 		
-		$cek1= $this->daftar_model->get_cariall($tabel,$tabeljoin,$wherejoin,$id);
+		$cek1= $this->daftar_model->get_caridata($tabel,$tabeljoin,$wherejoin,$id);
 		$cek=$this->daftar_model->cari_data($tabel,$where);
 		
 			foreach ($cek as $result)

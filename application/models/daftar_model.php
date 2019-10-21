@@ -48,6 +48,13 @@ class Daftar_model extends CI_Model
 			$query = $this->db->get_where("$tabel jm JOIN $tabeljoin m ON m.$wherejoin = jm.$wherejoin where id_st = '$where'");
 			return $query->result_array();
 		}
+
+	public function get_caridata($tabel,$tabeljoin,$wherejoin,$where){
+	
+		$query = $this->db->get_where("$tabel jm JOIN $tabeljoin m ON m.$wherejoin = jm.$wherejoin where id_dl = '$where'");
+		return $query->result_array();
+	}
+
 	public function update_data($where,$data,$table){
 	$this->db->where($where);
 	$this->db->update($table,$data);
