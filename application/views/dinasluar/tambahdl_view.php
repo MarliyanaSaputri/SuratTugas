@@ -18,7 +18,7 @@
 		<div class="col-xs-12">
 		<div class="box">
 			<div class="box-header">
-				<h3 class="box-title text-center">Data Surat Perintah Tugas</h3>
+				<h3 class="box-title text-center">Tambah Data Dinas Luar</h3>
 			</div>
 			<br>
 				<div class="box-body table-responsive">
@@ -30,7 +30,6 @@
 							<th width="17%">NIP</th>
 							<th width="10%">Kode Bidang</th>
 							<th width="20%">Nama Tugas</th>
-							<th width="10%">Tanggal Pembuatan</th>
 							<th width="7%">Pilihan</th>	
 						</tr>
 					</thead>								 
@@ -45,7 +44,6 @@
 							<td align="left"><?php echo $data['NIP']; ?></td>
 							<td align="left"><?php echo $data['kd_bid']; ?></td>					
 							<td align="left"><?php echo $data['nama_tugas']; ?></td>
-							<td align="left"><?php echo $data['tgl_pembuatan']; ?></td>
 							<td align="left"> 
 								<a title = "Tambah DL" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/formtambah/<?php echo $data['id_st'];?>"><span class="glyphicon glyphicon-edit"></span></a>
 							</td>

@@ -39,12 +39,18 @@
 						<?php
 						$no  = 1;
 						foreach ($daftardl as $data) :
+							$tgl_pelaksanaan= $data['tgl_pelaksanaan'];
+							$tgl_pelaksanaan =  date("d/m/Y",strtotime($tgl_pelaksanaan));
+
+							$tgl_akhir= $data['tgl_akhir'];
+							$tgl_akhir =  date("d/m/Y",strtotime($tgl_akhir));
+
 						?>
 						<tr>
 							<td align="left"><?php echo $no++;?></td>
 							<td align="left"><?php echo $data['no_st']; ?></td>
 							<td align="left"><?php echo $data['NIP']; ?></td>
-							<td align="left"><?php echo $data['tgl_pelaksanaan']. " s/d " .$data['tgl_akhir']; ?></td>			
+							<td align="left"><?php echo $tgl_pelaksanaan. " s/d " .$tgl_akhir; ?></td>			
 							<td align="left"><?php echo $data['daerah_tujuan']; ?></td>	
 							<td align="left"><?php echo $data['maksud_tujuan']; ?></td>
 							<td align="left">

@@ -32,10 +32,10 @@ class  Surattugas extends CI_Controller {
 	public function index()
 	{
 		$tabel = "tb_st";//ambil table 
-		$tabeljoin = "tb_bidang";
-		$wherejoin ="kd_bid"; 
+		$tabeljoin = "tb_pegawai";
+		$wherejoin="NIP"; 
 		$data=array('title'=>'Dasbor',
-		'daftarst' => $this->daftar_model->get_all($tabel,$tabeljoin,$wherejoin),
+		'daftarst' => $this->daftar_model->get_all($tabel,$wherejoin,$tabeljoin),
 		 'isi' =>'spt/dataspt'
 		 );
 		$this->load->view('layout/wrapper',$data);
@@ -57,37 +57,37 @@ class  Surattugas extends CI_Controller {
 		 );
 
 		$this->load->view('layout/wrapper',$data);
-		//$this->load->view('welcome_message');
+		
 	}
 
 	public function prosestambah()
 	{	
-	$notugas = $this->input->post('kd_tugas');
-	$kd_bid = $this->input->post('kd_bid');
-	$no_st = $this->input->post('no_st');
-	$nip = $this->input->post('NIP');
-	$nama_tugas = $this->input->post('nama_tugas');
-	$tgl_pembuatan = $this->input->post('tgl_pembuatan');
-	$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . 
-	'-'.substr ($tgl_pembuatan ,0,2) ;
+		$notugas = $this->input->post('kd_tugas');
+		$kd_bid = $this->input->post('kd_bid');
+		$no_st = $this->input->post('no_st');
+		$nip = $this->input->post('NIP');
+		$nama_tugas = $this->input->post('nama_tugas');
+		$tgl_pembuatan = $this->input->post('tgl_pembuatan');
+		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . 
+		'-'.substr ($tgl_pembuatan ,0,2) ;
 
 	$data = array(  //data yang akan ditambah pada table 
-	'no_st' =>	$no_st,
-	'NIP'=>$nip,
-	'kd_bid'=>$kd_bid,
-	'nama_tugas' => $nama_tugas,
-	'tgl_pembuatan' => $tgl_pembuatan
+		'no_st' =>	$no_st,
+		'NIP'=>$nip,
+		'kd_bid'=>$kd_bid,
+		'nama_tugas' => $nama_tugas,
+		'tgl_pembuatan' => $tgl_pembuatan
 	);
-	$this->daftar_model->insert_data($data ,'tb_st');
-	redirect(base_url('surattugas'));
+		$this->daftar_model->insert_data($data ,'tb_st');
+		redirect(base_url('surattugas'));
 	}
 
 	public function delete($id)
 	{	
-	$id =$id;
-	$tabel = "tb_st";//ambil table  
-	$where = array('id_st'=>$id); //id yg ingin dihapus
-	$hapus=$this->daftar_model->delete_data($where,$tabel);
+		$id =$id;
+		$tabel = "tb_st";//ambil table  
+		$where = array('id_st'=>$id); //id yg ingin dihapus
+		$hapus=$this->daftar_model->delete_data($where,$tabel);
 	 //tampilkan daftar 
 	redirect(base_url('surattugas'));
 	 }
@@ -116,23 +116,23 @@ class  Surattugas extends CI_Controller {
 
 	public function proses_update($nourut)
 	{
-	$id =$nourut;
-	$kd_bid= $this->input->post('kd_bid');
-	$no_st=$this->input->post('no_st');
-	$nip = $this->input->post('NIP');
-	$nama_tugas=$this->input->post('nama_tugas');
-	$tgl_pembuatan=$this->input->post('tgl_pembuatan');
-	$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . 
-	'-'.substr ($tgl_pembuatan ,0,2) ;
+		$id =$nourut;
+		$kd_bid= $this->input->post('kd_bid');
+		$no_st=$this->input->post('no_st');
+		$nip = $this->input->post('NIP');
+		$nama_tugas=$this->input->post('nama_tugas');
+		$tgl_pembuatan=$this->input->post('tgl_pembuatan');
+		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . 
+		'-'.substr ($tgl_pembuatan ,0,2) ;
 	$data = array(
-	'kd_bid'=>$kd_bid,
-	'no_st'=>$no_st,
-	'NIP'=>$nip,
-	'nama_tugas'=>$nama_tugas,
-	'tgl_pembuatan'=>$tgl_pembuatan
+		'kd_bid'=>$kd_bid,
+		'no_st'=>$no_st,
+		'NIP'=>$nip,
+		'nama_tugas'=>$nama_tugas,
+		'tgl_pembuatan'=>$tgl_pembuatan
 	);
 	$where = array(
-	'id_st' => $id
+		'id_st' => $id
     );
     $this->daftar_model->update_data($where,$data ,'tb_st');
 	redirect('surattugas');
