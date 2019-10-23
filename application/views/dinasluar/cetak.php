@@ -112,6 +112,12 @@ class pdf extends FPDF{
 	}
 
 	function hadir($peserta_hadir,$hadir2,$hadir3,$hadir4){
+		$no  = 0;
+		$had1 = $peserta_hadir;
+		$had2 = $hadir2;
+		$had3 = $hadir3;
+		$had4 = $hadir4;
+
 		$this->SetFont('Times','',12);
 		$this->SetXY(14,182);
 		$this->Cell(0,5,'VI'  ,0,1,'L');
@@ -119,20 +125,31 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Hadir Dalam '  ,0,1,'L');
 		$this->SetXY(24,188);
 		$this->Cell(0,5,'Acara '  ,0,1,'L');
-		$this->SetXY(24,182);
-		$this->Cell(38);
-		$this->MultiCell(130,5,': '.$peserta_hadir,'J');
-		$this->SetXY(24,187);
-		$this->Cell(38);
-		$this->MultiCell(130,5,'  ' . $hadir2,'J');
-		$this->SetXY(24,192);
-		$this->Cell(38);
-		$this->MultiCell(130,5,'  ' . $hadir3,'J');
-		$this->SetXY(24,197);
-		$this->Cell(38);
-		$this->MultiCell(130,5,'  ' . $hadir4,'J');
-		$this->SetXY(21,35);
-		$this->Cell(40);
+
+		if($had1){
+		$no++;
+			$this->SetXY(24,182);
+			$this->Cell(38);
+			$this->MultiCell(130,5,': '.$no.". ".$had1,'J');
+		} if($had2){
+		$no++;
+			$this->SetXY(24,187);
+			$this->Cell(38);
+			$this->MultiCell(130,5,'  '.$no.". ".$had2,'J');
+		} if($had3){
+		$no++;
+			$this->SetXY(24,192);
+			$this->Cell(38);
+			$this->MultiCell(130,5,'  '.$no.". ".$had3,'J');
+		} if($had4){
+		$no++;
+			$this->SetXY(24,197);
+			$this->Cell(38);
+			$this->MultiCell(130,5,'  '.$no.". ".$had4,'J');
+		} else{
+			$this->SetXY(21,35);
+			$this->Cell(40);
+		}
 	
 	}
 
