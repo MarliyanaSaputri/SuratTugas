@@ -28,7 +28,7 @@
 
 					           		<div class="form-group">
 										<label for="firstname" class="col-md-3">
-						                	No. ST : 
+						                	No. ST  
 						            	</label>
 										<div class="col-sm-5">
 										 <input type="text" class="form-control" value="<?php echo $st['no_st']; ?>" name="no_st" placeholder="" readonly=""/>

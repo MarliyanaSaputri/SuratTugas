@@ -136,7 +136,11 @@
           if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         })
     </script> 
-       
+       <script>
+            function confirmDialog() {
+            return confirm('Apakah anda yakin akan menghapus Data ini?')
+            }
+         </script>
 
     
 </body>

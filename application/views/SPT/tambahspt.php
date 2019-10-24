@@ -96,7 +96,7 @@
                                         Tanggal Pembuatan
                                     </label>                 
                                     <div class="col-sm-5">                                    
-                                       <input placeholder="Masukkan tanggal" type="text" class="form-control datepicker" name="tgl_pembuatan">
+                                       <input placeholder="  " type="text" class="form-control datepicker" name="tgl_pembuatan">
                                    </div>
                                     </div>                                
                                     <div class="form-group">
@@ -104,7 +104,7 @@
                                         Nama Tugas
                                     </label>
                                     <div class="col-sm-5">
-                                    <textarea type="text" name = "nama_tugas" id="nama_tugas" class="form-control" placeholder="Masukkan Nama Tugas"></textarea>
+                                    <textarea type="text" name = "nama_tugas" id="nama_tugas" class="form-control" placeholder=""></textarea>
                                     </div>
                                     </div>                                                      
                                 <div class="box-footer">

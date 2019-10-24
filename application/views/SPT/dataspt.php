@@ -51,7 +51,7 @@
 						<span class="glyphicon glyphicon-edit"></span></a> 
 						<a title = "unduh" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url()?>surattugas/cetak_spt/<?php echo $data['id_st'];?>"> 
 						<span class="glyphicon glyphicon-file"></span></a>
-						<a title = "hapus" class="btn btn-danger btn-xs btn-flat" onclick="returnconfirmDialog()" href="<?php echo base_url()?>surattugas/delete/<?php echo $data['id_st'];?>"> 
+						<a title = "hapus" class="btn btn-danger btn-xs btn-flat" onclick="return confirmDialog()" href="<?php echo base_url()?>surattugas/delete/<?php echo $data['id_st'];?>"> 
 						<span class="glyphicon glyphicon-trash"></span></a>
 						</td>
 						<?php
