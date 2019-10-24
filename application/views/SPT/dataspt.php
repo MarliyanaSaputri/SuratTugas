@@ -15,9 +15,11 @@
 		<div class="box-header">
 			<h3 class="box-title text-center">Data Surat Perintah Tugas</h3>
 			<div class="pull-right">
+				<?php if($this->fungsi->user_login()->level == 1) { ?>
 				<a href="<?php echo base_url();?>surattugas/formtambahspt"" class="btn btn-primary btn-flat">
 					<i class="glyphicon glyphicon-plus"></i> Create
 				</a>
+				  <?php } ?>
 			</div>
 		</div>
 		<br>
