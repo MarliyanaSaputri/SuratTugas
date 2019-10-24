@@ -24,7 +24,7 @@
 							<th width="5%">No</th>
 							<th width="12%">No ST</th>
 							<th width="17%">NIP</th>
-							<th width="10%">Kode Bidang</th>
+							<th width="17%">Nama</th>
 							<th width="20%">Nama Tugas</th>
 							<th width="7%">Pilihan</th>	
 						</tr>
@@ -38,7 +38,7 @@
 							<td align="left"><?php echo $no++;?></td>
 							<td align="left"><?php echo $data['no_st']; ?></td>
 							<td align="left"><?php echo $data['NIP']; ?></td>
-							<td align="left"><?php echo $data['kd_bid']; ?></td>					
+							<td align="left"><?php echo $data['nama']; ?></td>					
 							<td align="left"><?php echo $data['nama_tugas']; ?></td>
 							<td align="left"> 
 								<a title = "Tambah DL" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url() ?>DinasLuar/formtambah/<?php echo $data['id_st'];?>"><span class="glyphicon glyphicon-edit"></span></a>

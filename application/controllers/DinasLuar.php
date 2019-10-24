@@ -29,10 +29,11 @@ class  DinasLuar extends CI_Controller {
 	public function tambahdl()
 	{
 		$tabel = "tb_st";
-		$status = 'Belum_DL';
-		$where = array('status' => $status);
+		$tabeljoin = "tb_pegawai";
+		$wherejoin ="NIP"; 
 		$data=array('title'=>'TambahDL',
-		'tambahdl' => $this->daftar_model->cari_data($tabel,$where),
+		//'tambahdl' => $this->daftar_model->cari_data($tabel,$where),
+		'tambahdl' => $this->daftar_model->get_caridl($tabel,$tabeljoin,$wherejoin),
 		 'isi' =>'dinasluar/tambahdl_view'
 		 );
 

@@ -47,10 +47,13 @@
 					<td align="left"><?php echo $data['nama']; ?></td> 
 					<td align="left"><?php echo $data['nama_tugas']; ?></td>	
 					<td align="left"> 
+
+						<a title = "Cetak SPT" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url()?>surattugas/cetak_spt/<?php echo $data['id_st'];?>"> 
+						<span class="glyphicon glyphicon-file"></span></a>
+
 						<a title = "Update ST" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url() ?>surattugas/update_st/<?php echo $data['id_st'];?>">
 						<span class="glyphicon glyphicon-edit"></span></a> 
-						<a title = "unduh" class="btn btn-danger btn-xs btn-flat" href="<?php echo base_url()?>surattugas/cetak_spt/<?php echo $data['id_st'];?>"> 
-						<span class="glyphicon glyphicon-file"></span></a>
+						
 						<a title = "hapus" class="btn btn-danger btn-xs btn-flat" onclick="return confirmDialog()" href="<?php echo base_url()?>surattugas/delete/<?php echo $data['id_st'];?>"> 
 						<span class="glyphicon glyphicon-trash"></span></a>
 						</td>
