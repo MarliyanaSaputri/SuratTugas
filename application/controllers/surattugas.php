@@ -111,7 +111,7 @@ class  Surattugas extends CI_Controller {
 		 'isi' =>'spt/updatespt'
 		 );
 		$this->load->view('layout/wrapper',$data);
-		//$this->load->view('welcome_message');
+		
 	}
 
 	public function proses_update($nourut)
