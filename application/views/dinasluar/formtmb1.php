@@ -67,14 +67,14 @@
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" name="peserta_hadir" placeholder="1. ">
-					                  	<!-- <input id="hadir" value="1" type="hidden" />
+					                  	<!-- <input type="text" class="form-control" name="peserta_hadir" placeholder="1. "> -->
+					                  	<input id="hadir" value="1" type="hidden" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
-									    <div id="divPeserta"></div> -->
+									    <div id="divPeserta"></div> 
 					                  </div>
 					                </div>
 
-					                <div class="form-group">
+					                <!-- <div class="form-group">
 					                   <label for="firstname" class="col-md-3">
 							                
 							            </label>
@@ -99,7 +99,7 @@
 					                  <div class="col-sm-5">
 					                  	 <input type="text" class="form-control" name="hadir4" placeholder="4. ">
 					                  </div>
-					                </div>
+					                </div> -->
 
 
 				                	<div class="form-group">
@@ -183,7 +183,7 @@
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir' placeholder='Nama Peserta' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
 							     document.getElementById("hadir").value = hadir;

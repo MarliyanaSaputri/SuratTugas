@@ -58,6 +58,8 @@ class  DinasLuar extends CI_Controller {
 	{	
 		$id_st = $edit;
 
+		$hadirNew = ""; 
+
 		$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
@@ -69,9 +71,9 @@ class  DinasLuar extends CI_Controller {
 		$range_tgl2 =  substr($range_tgl2,17,4) . '-'.substr($range_tgl2,14,2) . 
 	'-'.substr($range_tgl2,11,2) ;
 		$hadir = $this->input->post('peserta_hadir');
-		$hadir2 = $this->input->post('hadir2');
-		$hadir3 = $this->input->post('hadir3');
-		$hadir4 = $this->input->post('hadir4');
+		//$hadir2 = $this->input->post('hadir2');
+		//$hadir3 = $this->input->post('hadir3');
+		//$hadir4 = $this->input->post('hadir4');
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
@@ -79,6 +81,12 @@ class  DinasLuar extends CI_Controller {
 		$tgl_buat =  substr($tgl_buat,6,4) . '-'.substr($tgl_buat,3,2) . 
 	'-'.substr($tgl_buat,0,2) ;
  		$status ="DL";
+
+ 		foreach($hadir as $hadirNew1)  
+		   {  
+		      $hadirNew .= $hadirNew1 . ",";  
+		   }
+
 			$data = array(   		//data yang akan ditambah pada table 
 				'id_dl' => $id_dl,
 				'id_st' => $id_st,
@@ -87,10 +95,10 @@ class  DinasLuar extends CI_Controller {
 				'maksud_tujuan' => $maksud,
 				'tgl_pelaksanaan' => $range_tgl,
 				'tgl_akhir' => $range_tgl2,
-				'peserta_hadir' => $hadir,
-				'hadir2' => $hadir2,
-				'hadir3' => $hadir3,
-				'hadir4' => $hadir4,
+				'peserta_hadir' => $hadirNew,
+				//'hadir2' => $hadir2,
+				//'hadir3' => $hadir3,
+				//'hadir4' => $hadir4,
 				'daerah_tujuan' => $daerah,
 				'bahasan' => $bahas,
 				'lain-lain' => $lain,
@@ -105,7 +113,7 @@ class  DinasLuar extends CI_Controller {
 		
 		$this->daftar_model->update_data($where,$data1,'tb_st');
 
-			$this->daftar_model->insert_data($data,'tb_dl');
+		$this->daftar_model->insert_data($data,'tb_dl');
 		
 		redirect('DinasLuar');
 	}
