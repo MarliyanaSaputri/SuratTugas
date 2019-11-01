@@ -186,7 +186,7 @@
 							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
-							     document.getElementById("hadir").value = hadir;
+							     document.getElementById("hadir").value = hadir;  
 							   }
 							   function hapusElemen(hadir) {
 							     $(hadir).remove();
