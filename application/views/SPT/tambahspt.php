@@ -52,6 +52,7 @@
                                         </label>
                                         <!--  <div class="input-group control-group after-add-more"> -->
                                         <div class="col-sm-5">
+                                            
                                              <!--  <input type="text" name="addmore[]" class="form-control" placeholder="Hobi"> -->
                                               <input type="text" class="form-control" name="addmore[]" id="NIP" placeholder="" readonly="" />        
                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
@@ -101,6 +102,7 @@
                                     <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                     <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i></button>
+
                                       </div>
                                   </div>
 
