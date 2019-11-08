@@ -7,7 +7,7 @@ class User_m extends CI_Model
 	public function login($post)
 	{
 		$this->db->select('*');
-		$this->db->from('user');
+		$this->db->from('tb_pegawai');
 		$this->db->where('username', $post['username']);
 		$this->db->where('password', sha1($post['password']));
 		$query = $this->db->get();
@@ -16,9 +16,9 @@ class User_m extends CI_Model
 
 	public function get ($id = null)
 	{
-		$this->db->from('user');
+		$this->db->from('tb_pegawai');
 		if($id != null)
-			$this->db->where('user_id', $id);
+			$this->db->where('NIP', $id);
  	{
  		 $query = $this->db->get();
  		 return $query;
@@ -48,15 +48,15 @@ class User_m extends CI_Model
 
 	public function edit($post) 
  	{
- 		$params['nama'] = $post['fullname'] ;
+ 		$params['nama'] = $post['nama'] ;
  		$params['username'] = $post['username'];
  		if(!empty($post['password'])) {
  			$params['password'] = sha1($post['password']);
  		}
  		$params['password'] = sha1($post['password']);
 		$params['level'] = $post['level'];
-		$this->db->where('user_id', $post['user_id']);
-		$this->db->update('user', $params);
+		$this->db->where('NIP', $post['NIP']);
+		$this->db->update('tb_peagwai', $params);
  	}
 
 
