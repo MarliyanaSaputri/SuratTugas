@@ -10,8 +10,8 @@ Class Fungsi {
 
 	function user_login () {
 		$this->ci->load->model('user_m');
-		$user_id = $this->ci->session->userdata('userid');
-		$user_data = $this->ci->user_m->get($user_id)->row();
+		$NIP = $this->ci->session->userdata('NIP');
+		$user_data = $this->ci->user_m->get($NIP)->row();
 		return $user_data;
 
 	}
