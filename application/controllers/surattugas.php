@@ -53,11 +53,10 @@ class  Surattugas extends CI_Controller {
 		'databd' => $this->daftar_model->daftar_view($tabel1),
 		'datatugas' => $this->daftar_model->daftar_view($tabel2),
 		'datapegawai' => $this->daftar_model->daftar_view($tabel3),
-		 'isi' =>'spt/tambahspt'
+		'isi' =>'spt/tambahspt'
 		 );
 
-		$this->load->view('layout/wrapper',$data);
-		
+		$this->load->view('layout/wrapper',$data);	
 	}
 
 	public function prosestambah()
@@ -68,8 +67,7 @@ class  Surattugas extends CI_Controller {
 		$nip = $this->input->post('NIP');
 		$nama_tugas = $this->input->post('nama_tugas');
 		$tgl_pembuatan = $this->input->post('tgl_pembuatan');
-		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . 
-		'-'.substr ($tgl_pembuatan ,0,2) ;
+		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . '-'.substr ($tgl_pembuatan ,0,2) ;
 
 	$data = array(  //data yang akan ditambah pada table 
 		'no_st' =>	$no_st,

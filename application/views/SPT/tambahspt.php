@@ -45,15 +45,34 @@
                                     </div>
                                     </div>
 
+
+
+                                    <div class="form-group">
+                                       <label for="firstname" class="col-md-3">
+                                            NIP 
+                                        </label>
+                                      <div class="col-sm-5">
+                                        <!-- <input type="text" class="form-control" name="peserta_NIP" placeholder="1. "> -->
+                                        <input id="NIP" class="form-control"  type="readonly" name="tambahPeserta[]" />
+                                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                            </button>                      
+                                        <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
+                                        <div id="divPeserta"></div> 
+                                      </div>
+                                    </div>  
+
+
+
                                     <div class="input-group control-group after-add-more col-sm-12">
                                     <div class="form-group">
                                         <label for="firstname" class="col-md-3">
                                             NIP 
                                         </label>
-                                        <!--  <div class="input-group control-group after-add-more"> -->
+                                        
                                         <div class="col-sm-5">
                                             
-                                             <!--  <input type="text" name="addmore[]" class="form-control" placeholder="Hobi"> -->
+                                         
                                               <input type="text" class="form-control" name="addmore[]" id="NIP" placeholder="" readonly="" />        
                                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                             <span class="glyphicon glyphicon-search"></span>
@@ -87,16 +106,16 @@
                                     </div>
                                     </div>  
 
-                                         <!-- Copy Fields -->
+                                <!--          <!-- Copy Fields -->
                                 <div class="copy hide">
                                     <div class="input-group control-group after-add-more col-sm-12">
                                     <div class="form-group">
                                      <label for="firstname" class="col-md-3">
                                             NIP 
                                     </label>
-                                <!--  <div class="input-group control-group after-add-more"> -->
+                                
                                     <div class="col-sm-5">
-                                         <!--  <input type="text" name="addmore[]" class="form-control" placeholder="Hobi"> -->
+                                        
                                       <input type="text" class="form-control" name="addmore[]" id="NIP" placeholder="" readonly="" />
                                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                     <span class="glyphicon glyphicon-search"></span>
@@ -172,7 +191,7 @@
                             $no  = 1;
                             foreach ($datapegawai as $data) :
                             ?>
-                              <tr class="pilih" data-NIP="<?php echo $data['NIP']; ?>"
+                              <tr class="pilih" data-nip="<?php echo $data['NIP']; ?>"
                                 data-nama="<?php echo $data['nama']; ?>"
                                     data-pangkat="<?php echo $data['pangkat']; ?>"
                                         data-golongan="<?php echo $data['golongan']; ?>"
@@ -196,21 +215,39 @@
      </div>
   </div>
 </div> 
-        <script type="text/javascript">
-//            jika dipilih, NIP akan masuk ke input dan modal di tutup
-            $(document).on('onclick', '.pilih', function (e) {
-                document.getElementById("addmore").value = $(this).attr('data-nip');
-                document.getElementById("nama").value = $(this).attr('data-nama');
-                document.getElementById("pangkat").value = $(this).attr('data-golongan')  + $(this).attr('data-golongan')  ;          
-                document.getElementById("jabatan").value = $(this).attr('data-jabatan');
-                $('#myModal').modal('hide');
-            });
-//            tabel lookup mahasiswa
-            $(function () {
-                $("#lookup").dataTable();
-            });
-            }
-        </script>
+                                <script type="text/javascript">
+                    //            jika dipilih, NIP akan masuk ke input dan modal di tutup
+                                $(document).on('onclick', '.pilih', function (e) {
+                                    document.getElementById("NIP").value = $(this).attr('data-nip');
+                                    
+                                    document.getElementById("nama").value = $(this).attr('data-nama');
+                                    document.getElementById("pangkat").value = $(this).attr('data-golongan')  + $(this).attr('data-golongan')  ;          
+                                    document.getElementById("jabatan").value = $(this).attr('data-jabatan');
+                                    $('#myModal').modal('hide');
+                                });
+                    //            tabel lookup mahasiswa
+                                $(function () {
+                                    $("#lookup").dataTable();
+                                });
+                                }
+                            </script>
+                                <script language="javascript">
+                               function tambahPeserta() {
+                                 var NIP = document.getElementById("NIP").value;
+                                 var stre;
+                                 stre="<p id='srow" + NIP + 
+                                 "'> <input id='NIP' class='form-control'  type='readonly' name='tambahPeserta[]' /> <button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'><span class='glyphicon glyphicon-search'></span></button><a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + NIP + "\"); return false;'>Hapus</a></p>";
+                                 $("#divPeserta").append(stre);
+                                 NIP = (NIP-1) + 2;
+                                  document.getElementById("NIP").value = NIP;  
+                               }
+                               function hapusElemen(NIP) {
+                                 $(NIP).remove();
+                               }
+                            </script>
+
+
+
         <script type="text/javascript">
         function price() {
         var th = <?php echo date('Y')?>;
