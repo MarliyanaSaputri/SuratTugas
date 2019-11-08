@@ -68,7 +68,7 @@
 							            </label>
 					                  <div class="col-sm-5">
 					                  	<!-- <input type="text" class="form-control" name="peserta_hadir" placeholder="1. "> -->
-					                  	<input id="hadir" value="1" type="hidden" />
+					                  	<input id="hadir" value="1" type="hidden" class="form-control" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
 									    <div id="divPeserta"></div> 
 					                  </div>
@@ -183,7 +183,7 @@
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]'class='form-control' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
 							     document.getElementById("hadir").value = hadir;  
