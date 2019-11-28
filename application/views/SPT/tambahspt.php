@@ -183,40 +183,19 @@
       });
     });
 </script>
-<script type="text/javascript">
-//            jika dipilih, NIP akan masuk ke input dan modal di tutup
-            $(document).on('click', '.pilih', function (e) {
-                document.getElementById("NIP").value = $(this).attr('data-nip');
-              
-             
-                $('#myModal').modal('hide');
-            });
-//            tabel lookup mahasiswa
-            $(function () {
-                $("#lookup").dataTable();
-            });
-            }
-        </script>
+
 		
+		
+		
+		
+        
+
+
         <script type="text/javascript">
-
-//            jika dipilih, nim akan masuk ke input dan modal di tutup
-            $(document).on('click', '.pilih', function (e) {
-                document.getElementById("NIP").value = $(this).attr('data-nip');
-                $('#myModal').modal('hide');
-            });
-			
-
-//            tabel lookup mahasiswa
-            $(function () {
-                $("#lookup").dataTable();
-            });
-
-            function dummy() {
-                var nim = document.getElementById("nim").value;
-                alert('Nomor Induk Mahasiswa ' + nim + ' berhasil tersimpan');
-				
-				var ket = document.getElementById("ket").value;
-                alert('Keterangan ' + ket + ' berhasil tersimpan');
-            }
+        function price() {
+        var th = <?php echo date('Y')?>;
+        var tes = document.getElementById("kd_tugas").value + "/" ;
+        var kd = <?=ucfirst($this->fungsi->user_login()->kd_bid)?>;
+        document.getElementById("no_st").value=tes + "  " + "/" + kd + "/"+ th ;
+        }
         </script>
