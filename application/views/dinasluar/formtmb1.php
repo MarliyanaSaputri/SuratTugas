@@ -74,33 +74,6 @@
 					                  </div>
 					                </div>
 
-					                <!-- <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" name="hadir2" placeholder="2. ">
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	 <input type="text" class="form-control" name="hadir3" placeholder="3. ">
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	 <input type="text" class="form-control" name="hadir4" placeholder="4. ">
-					                  </div>
-					                </div> -->
-
 
 				                	<div class="form-group">
 					                   <label for="firstname" class="col-md-3">

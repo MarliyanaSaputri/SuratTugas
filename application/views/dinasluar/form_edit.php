@@ -65,40 +65,23 @@
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" value="<?php echo $dl['peserta_hadir']; ?>" name="peserta_hadir" placeholder="1. ">
-					                 	<!-- <input id="hadir" value="<?php //echo $dl['peserta_hadir']; ?>" type="text" />
-					                    <input id="hadir" value="1" type="hidden" />
+
+										<!-- Penggunaan Fungsi explode () -->
+										<?php 
+											$tag = explode(",", $dl['peserta_hadir']);
+						                  	foreach($tag as $t):
+										?>
+										
+					                  	<input type="text" class="form-control" value="<?php echo $t ?>" name="peserta_hadir" id="peserta_hadir">
+					                  	<?php endforeach; ?>
+
+					                  	<input id="hadir" value="1" type="hidden" />
 									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
-									    <div id="divPeserta"></div> -->
+									    <div id="divPeserta"></div> 
+									
 					                  </div>
 					                </div>
 
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	<input type="text" class="form-control" value="<?php echo $dl['hadir2']; ?>" name="hadir2" placeholder="2. ">
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	 <input type="text" class="form-control" value="<?php echo $dl['hadir3']; ?>" name="hadir3" placeholder="3. ">
-					                  </div>
-					                </div>
-
-					                <div class="form-group">
-					                   <label for="firstname" class="col-md-3">
-							                
-							            </label>
-					                  <div class="col-sm-5">
-					                  	 <input type="text" class="form-control" value="<?php echo $dl['hadir4']; ?>" name="hadir4" placeholder="4. ">
-					                  </div>
-					                </div>
 
 				                	<div class="form-group">
 					                   <label for="firstname" class="col-md-3">
@@ -174,11 +157,11 @@
 						        });
 						    </script>
 
-							<!-- <script language="javascript">
+							<script language="javascript">
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir' placeholder='Nama Peserta' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
 							     document.getElementById("hadir").value = hadir;
@@ -186,7 +169,8 @@
 							   function hapusElemen(hadir) {
 							     $(hadir).remove();
 							   }
-							</script> -->
+							</script>
+
 
 
 						</div>				            

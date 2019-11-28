@@ -58,9 +58,8 @@ class  DinasLuar extends CI_Controller {
 	{	
 		$id_st = $edit;
 
-		$hadirNew = ""; 
-
-		$id_dl = $this->input->post('id_dl');
+		//$hadirNew = ""; 
+		//$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
 		$maksud = $this->input->post('maksud_tujuan');
@@ -70,7 +69,9 @@ class  DinasLuar extends CI_Controller {
 		$range_tgl2 = $this->input->post('tgl_pelaksanaan');
 		$range_tgl2 =  substr($range_tgl2,17,4) . '-'.substr($range_tgl2,14,2) . 
 	'-'.substr($range_tgl2,11,2) ;
-		$hadir = $this->input->post('peserta_hadir');
+
+		$hadir = implode(",", $this->input->post('peserta_hadir'));
+
 		//$hadir2 = $this->input->post('hadir2');
 		//$hadir3 = $this->input->post('hadir3');
 		//$hadir4 = $this->input->post('hadir4');
@@ -82,10 +83,10 @@ class  DinasLuar extends CI_Controller {
 	'-'.substr($tgl_buat,0,2) ;
  		$status ="DL";
 
- 		foreach($hadir as $hadirNew1)  
+ 		/*foreach($hadir as $hadirNew1)  
 		   {  
 		      $hadirNew .= $hadirNew1 . ",";  
-		   }
+		   }*/
 
 			$data = array(   		//data yang akan ditambah pada table 
 				'id_dl' => $id_dl,
@@ -95,7 +96,7 @@ class  DinasLuar extends CI_Controller {
 				'maksud_tujuan' => $maksud,
 				'tgl_pelaksanaan' => $range_tgl,
 				'tgl_akhir' => $range_tgl2,
-				'peserta_hadir' => $hadirNew,
+				'peserta_hadir' => $hadir,
 				//'hadir2' => $hadir2,
 				//'hadir3' => $hadir3,
 				//'hadir4' => $hadir4,
@@ -104,9 +105,11 @@ class  DinasLuar extends CI_Controller {
 				'lain-lain' => $lain,
 				'tgl_pembuatan' => $tgl_buat
 			);
-				$data1 = array(   		//data yang akan ditambah pada table 
-				'status' => 'DL'
+
+			$data1 = array(   		//data yang akan ditambah pada table 
+			'status' => 'DL'
 			);
+
 		$where = array(
 			'no_st' => $nost
 		);
@@ -169,6 +172,8 @@ class  DinasLuar extends CI_Controller {
 		$tgl_buat =  substr($tgl_buat,6,4) . '-'.substr($tgl_buat,3,2) . 
 	'-'.substr($tgl_buat,0,2) ;
 
+		$hdr = implode(",", $this->input->post('peserta_hadir'));
+
 		$data = array(   
 			//'id_dl'	=> $id,	//data yang akan ditambah pada table 
 			'no_st' => $nost,
@@ -176,7 +181,8 @@ class  DinasLuar extends CI_Controller {
 			'maksud_tujuan' => $maksud,
 			'tgl_pelaksanaan' => $range_tgl,
 			'tgl_akhir' => $range_tgl2,
-			'peserta_hadir' => $hadir,
+			'peserta_hadir' => $hdr,
+			'peserta_hadir' => $t,
 			'hadir2' => $hadir2,
 			'hadir3' => $hadir3,
 			'hadir4' => $hadir4,
