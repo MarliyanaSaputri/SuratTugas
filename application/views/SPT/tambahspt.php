@@ -45,111 +45,20 @@
                                     </div>
                                     </div>
 
-
-
                                     <div class="form-group">
                                        <label for="firstname" class="col-md-3">
                                             NIP 
                                         </label>
-                                      <div class="col-sm-5">
-                                        <!-- <input type="text" class="form-control" name="peserta_NIP" placeholder="1. "> -->
-                                        <input id="NIP" class="form-control"  type="readonly" name="tambahPeserta[]" />
-                                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                            <span class="glyphicon glyphicon-search"></span>
-                                            </button>                      
-                                        <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
-                                        <div id="divPeserta"></div> 
+                                      <div class="col-sm-5">								  
+									     <div class="input-group control-group after-add-more">
+										  <div class="input-group-btn"> 
+											<button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Tmabah</button>
+										  </div>
+										</div>                                 
                                       </div>
                                     </div>  
 
-
-
-                                    <div class="input-group control-group after-add-more col-sm-12">
-                                    <div class="form-group">
-                                        <label for="firstname" class="col-md-3">
-                                            NIP 
-                                        </label>
-                                        
-                                        <div class="col-sm-5">
-                                            
-                                         
-                                              <input type="text" class="form-control" name="addmore[]" id="NIP" placeholder="" readonly="" />        
-                                               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                            <span class="glyphicon glyphicon-search"></span>
-                                            </button>                      
-                                           <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i></button>
-                                        </div>
-                                    </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                    <label for="firstname" class="col-md-3">
-                                        Nama</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" readonly="" class="form-control" name="nama" id="nama" placeholder="">
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="firstname" class="col-md-3">
-                                       Pangkat / Gol
-                                    </label>
-                                    <div class="col-sm-5">
-                                    <input type="text" readonly="" class="form-control" id="pangkat" name="pangkat" placeholder="">
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="firstname" class="col-md-3">
-                                    Jabatan
-                                    </label>
-                                    <div class="col-sm-5">
-                                    <textarea type="text"readonly="" class="form-control" id="jabatan" name="jabatan" placeholder=""></textarea>
-                                    </div>
-                                    </div>  
-
-                                <!--          <!-- Copy Fields -->
-                                <div class="copy hide">
-                                    <div class="input-group control-group after-add-more col-sm-12">
-                                    <div class="form-group">
-                                     <label for="firstname" class="col-md-3">
-                                            NIP 
-                                    </label>
-                                
-                                    <div class="col-sm-5">
-                                        
-                                      <input type="text" class="form-control" name="addmore[]" id="NIP" placeholder="" readonly="" />
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                    <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i></button>
-
-                                      </div>
-                                  </div>
-
-                                    <div class="form-group">
-                                    <label for="firstname" class="col-md-3">
-                                        Nama</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" readonly="" class="form-control" name="nama" id="nama" placeholder="">
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="firstname" class="col-md-3">
-                                       Pangkat / Gol
-                                    </label>
-                                    <div class="col-sm-5">
-                                    <input type="text" readonly="" class="form-control" id="pangkat" name="pangkat" placeholder="">
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="firstname" class="col-md-3">
-                                        Jabatan
-                                        </label>
-                                    <div class="col-sm-5">
-                                    <textarea type="text"readonly="" class="form-control" id="jabatan" name="jabatan" placeholder=""></textarea>
-                                    </div>
-                                    </div>  
-                                    </div>
-                                    </div>
+                                   
                                                  
                                     <div class="form-group">
                                     <label for="firstname" class="col-md-3">
@@ -170,24 +79,25 @@
                                 <div class="box-footer">
                                     <div class="col-sm-8">
                                
-        <!-- Modal -->
+          <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="width:800px">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Data Pegawai</h4>
+                        <h4 class="modal-title" id="myModalLabel">Lookup Mahasiswa</h4>
                     </div>
                     <div class="modal-body">
                         <table id="lookup" class="table table-bordered table-hover table-striped">
                             <thead>
-                                <tr  >
-                                    <th>NIP</th>
-                                    <th>Nama</th>                                    
+                                <tr>
+                                    <th>Nim</th>
+                                    <th>Nama</th>
+								
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php
+                               <?php
                             $no  = 1;
                             foreach ($datapegawai as $data) :
                             ?>
@@ -196,7 +106,6 @@
                                     data-pangkat="<?php echo $data['pangkat']; ?>"
                                         data-golongan="<?php echo $data['golongan']; ?>"
                                         data-jabatan="<?php echo $data['jabatan']; ?>">
-
                                 <td><?php echo $data['NIP']; ?>  </td>
                                 <td><?php echo $data['nama']; ?></td>                                 
                                 </tr>
@@ -209,54 +118,60 @@
                 </div>
             </div>
         </div>
-         <button type="submit" class="btn btn-default">Cancel</button>
-            <button type="submit" name="simpan" class="btn btn-info pull-right">Tambah</button>
+		
+		
+
+        <!-- Copy Fields -->
+        <div class="copy hide">
+          <div class="control-group input-group" style="margin-top:10px">
+            <input type="text" name="addmore[]" id="NIP" class="form-control" placeholder="Enter Name Here">
+            <div class="input-group-btn"> 
+ <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                            </button> 
+              <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
+            </div>
+          </div>
         </div>
-     </div>
+    </div>
   </div>
-</div> 
-                                <script type="text/javascript">
-                    //            jika dipilih, NIP akan masuk ke input dan modal di tutup
-                                $(document).on('onclick', '.pilih', function (e) {
-                                    document.getElementById("NIP").value = $(this).attr('data-nip');
-                                    
-                                    document.getElementById("nama").value = $(this).attr('data-nama');
-                                    document.getElementById("pangkat").value = $(this).attr('data-golongan')  + $(this).attr('data-golongan')  ;          
-                                    document.getElementById("jabatan").value = $(this).attr('data-jabatan');
-                                    $('#myModal').modal('hide');
-                                });
-                    //            tabel lookup mahasiswa
-                                $(function () {
-                                    $("#lookup").dataTable();
-                                });
-                                }
-                            </script>
-                                <script language="javascript">
-                               function tambahPeserta() {
-                                 var NIP = document.getElementById("NIP").value;
-                                 var stre;
-                                 stre="<p id='srow" + NIP + 
-                                 "'> <input id='NIP' class='form-control'  type='readonly' name='tambahPeserta[]' /> <button type='button' class='btn btn-default' data-toggle='modal' data-target='#myModal'><span class='glyphicon glyphicon-search'></span></button><a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + NIP + "\"); return false;'>Hapus</a></p>";
-                                 $("#divPeserta").append(stre);
-                                 NIP = (NIP-1) + 2;
-                                  document.getElementById("NIP").value = NIP;  
-                               }
-                               function hapusElemen(NIP) {
-                                 $(NIP).remove();
-                               }
-                            </script>
+</div>
 
-
-
-        <script type="text/javascript">
-        function price() {
-        var th = <?php echo date('Y')?>;
-        var tes = document.getElementById("kd_tugas").value + "/" ;
-        var kd = <?=ucfirst($this->fungsi->user_login()->kd_bid)?>;
-        document.getElementById("no_st").value=tes + "  " + "/" + kd + "/"+ th ;
-        }
-</script>
-
+ <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width:800px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Data Pegawai</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table id="lookup" class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>NIP</th>
+                                    <th>Nama</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $no  = 1;
+						
+                            foreach ($query as $data) :
+                            ?>
+                              <tr class="pilih" data-nip="<?php echo $data['NIP']; ?>">
+                             
+                                <td><?php echo $data['NIP']; ?></td>
+                                <td><?php echo $data['nama']; ?></td>                                 
+                                </tr>
+                                <?php
+                                endforeach;
+                                ?>
+                            </tbody>
+                        </table>  
+                    </div>
+                </div>
+            </div>
+        </div>
 <script type="text/javascript">
     $(document).ready(function() {
       $(".add-more").click(function(){ 
@@ -268,3 +183,40 @@
       });
     });
 </script>
+<script type="text/javascript">
+//            jika dipilih, NIP akan masuk ke input dan modal di tutup
+            $(document).on('click', '.pilih', function (e) {
+                document.getElementById("NIP").value = $(this).attr('data-nip');
+              
+             
+                $('#myModal').modal('hide');
+            });
+//            tabel lookup mahasiswa
+            $(function () {
+                $("#lookup").dataTable();
+            });
+            }
+        </script>
+		
+        <script type="text/javascript">
+
+//            jika dipilih, nim akan masuk ke input dan modal di tutup
+            $(document).on('click', '.pilih', function (e) {
+                document.getElementById("NIP").value = $(this).attr('data-nip');
+                $('#myModal').modal('hide');
+            });
+			
+
+//            tabel lookup mahasiswa
+            $(function () {
+                $("#lookup").dataTable();
+            });
+
+            function dummy() {
+                var nim = document.getElementById("nim").value;
+                alert('Nomor Induk Mahasiswa ' + nim + ' berhasil tersimpan');
+				
+				var ket = document.getElementById("ket").value;
+                alert('Keterangan ' + ket + ' berhasil tersimpan');
+            }
+        </script>
