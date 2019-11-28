@@ -182,7 +182,7 @@ class  DinasLuar extends CI_Controller {
 			'tgl_pelaksanaan' => $range_tgl,
 			'tgl_akhir' => $range_tgl2,
 			'peserta_hadir' => $hdr,
-			'peserta_hadir' => $t,
+			//'peserta_hadir' => $t,
 			'hadir2' => $hadir2,
 			'hadir3' => $hadir3,
 			'hadir4' => $hadir4,
