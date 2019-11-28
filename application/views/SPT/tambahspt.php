@@ -52,7 +52,7 @@
                                       <div class="col-sm-5">								  
 									     <div class="input-group control-group after-add-more">
 										  <div class="input-group-btn"> 
-											<button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Tmabah</button>
+											<button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
 										  </div>
 										</div>                                 
                                       </div>
@@ -123,14 +123,16 @@
 
         <!-- Copy Fields -->
         <div class="copy hide">
-          <div class="control-group input-group" style="margin-top:10px">
+          <div class="control-group input-group"style="margin-top:10px" >
+
             <input type="text" name="addmore[]" id="NIP" class="form-control" placeholder="Enter Name Here">
+
             <div class="input-group-btn"> 
- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
                                             <span class="glyphicon glyphicon-search"></span>
                                             </button> 
               <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
-            </div>
+            
           </div>
         </div>
     </div>
