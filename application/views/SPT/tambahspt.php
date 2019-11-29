@@ -21,7 +21,7 @@
                             <section class="content">
                               <div class="row">
                                 <div class="col-md-12">
-                                <form class="form-horizontal" method="post" id="frm_pembelian" action="<?php echo base_url() ?>surattugas/prosestambah/" >
+                                <form class="form-horizontal" method="post" id="frm_pembelian" action="<?php echo base_url() ?>surattugas/prosestambah" >
                                 <div class="box-body">
                                     <div class="form-group">
                                     <label for="firstname" class="col-md-3">
@@ -139,10 +139,6 @@
   </div>
 </div>
 
-
-
-        
-
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="width:800px">
                 <div class="modal-content">
@@ -178,11 +174,6 @@
                 </div>
             </div>
         </div>
-
-
-
-                                <button type="submit" name="simpan" class="btn btn-info pull-right">Tambah</button>
-                           
 <script type="text/javascript">
     $(document).ready(function() {
       $(".add-more").click(function(){ 
