@@ -58,7 +58,6 @@ class  DinasLuar extends CI_Controller {
 	{	
 		$id_st = $edit;
 
-		//$hadirNew = ""; 
 		//$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
@@ -72,9 +71,6 @@ class  DinasLuar extends CI_Controller {
 
 		$hadir = implode(",", $this->input->post('peserta_hadir'));
 
-		//$hadir2 = $this->input->post('hadir2');
-		//$hadir3 = $this->input->post('hadir3');
-		//$hadir4 = $this->input->post('hadir4');
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
@@ -83,13 +79,9 @@ class  DinasLuar extends CI_Controller {
 	'-'.substr($tgl_buat,0,2) ;
  		$status ="DL";
 
- 		/*foreach($hadir as $hadirNew1)  
-		   {  
-		      $hadirNew .= $hadirNew1 . ",";  
-		   }*/
 
 			$data = array(   		//data yang akan ditambah pada table 
-				'id_dl' => $id_dl,
+			//	'id_dl' => $id_dl,
 				'id_st' => $id_st,
 				'no_st' => $nost,
 				'NIP' => $nip,
@@ -97,9 +89,6 @@ class  DinasLuar extends CI_Controller {
 				'tgl_pelaksanaan' => $range_tgl,
 				'tgl_akhir' => $range_tgl2,
 				'peserta_hadir' => $hadir,
-				//'hadir2' => $hadir2,
-				//'hadir3' => $hadir3,
-				//'hadir4' => $hadir4,
 				'daerah_tujuan' => $daerah,
 				'bahasan' => $bahas,
 				'lain-lain' => $lain,
@@ -161,10 +150,10 @@ class  DinasLuar extends CI_Controller {
 		$range_tgl2 = $this->input->post('tgl_pelaksanaan');
 		$range_tgl2 =  substr($range_tgl2,17,4) . '-'.substr($range_tgl2,14,2) . 
 	'-'.substr($range_tgl2,11,2) ;
-		$hadir = $this->input->post('peserta_hadir');
-		$hadir2 = $this->input->post('hadir2');
-		$hadir3 = $this->input->post('hadir3');
-		$hadir4 = $this->input->post('hadir4');
+
+		$t = implode(",", $this->input->post('peserta_hadir'));
+		$hdr = implode(",", $this->input->post('peserta_hadir'));
+		
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
@@ -181,11 +170,10 @@ class  DinasLuar extends CI_Controller {
 			'maksud_tujuan' => $maksud,
 			'tgl_pelaksanaan' => $range_tgl,
 			'tgl_akhir' => $range_tgl2,
+
+			'peserta_hadir' => $t,
 			'peserta_hadir' => $hdr,
-			//'peserta_hadir' => $t,
-			'hadir2' => $hadir2,
-			'hadir3' => $hadir3,
-			'hadir4' => $hadir4,
+
 			'daerah_tujuan' => $daerah,
 			'bahasan' => $bahas,
 			'lain-lain' => $lain,
@@ -228,9 +216,6 @@ class  DinasLuar extends CI_Controller {
 				$tgl_pembuatan = $result['tgl_pembuatan'];
 				$tgl_pembuatan = date("d F Y",strtotime($tgl_pembuatan));
 				$lain = $result['lain-lain'];
-				$hadir2 = $result['hadir2'];
-				$hadir3 = $result['hadir3'];
-				$hadir4 = $result['hadir4'];
 			}
 
 			foreach ($cek1 as $result)
@@ -251,17 +236,9 @@ class  DinasLuar extends CI_Controller {
 				'daerah_tujuan'=>$daerah_tujuan,
 				'nama'=>$nama,
 				'tgl_pembuatan'=>$tgl_pembuatan,
-				'lain'=>$lain,
-				'hadir2'=>$hadir2,
-				'hadir3'=>$hadir3,
-				'hadir4'=>$hadir4
-			
+				'lain'=>$lain
 			);              
-				// 'jabatan'=>$jabatan,
-				// 'pangkat'=>$pangkat,
-				// 'golongan'=>$golongan
 				
-			
 
 			$this->load->view('dinasluar/cetak',$data);
 	}
