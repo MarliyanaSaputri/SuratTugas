@@ -56,9 +56,7 @@
 										  </div>
 										</div>                                 
                                       </div>
-                                    </div>  
-
-                                   
+                                    </div>                                     
                                                  
                                     <div class="form-group">
                                     <label for="firstname" class="col-md-3">
@@ -185,12 +183,6 @@
       });
     });
 </script>
-
-		
-		
-		
-		
-        
 
 
         <script type="text/javascript">
