@@ -137,6 +137,9 @@
   </div>
 </div>
 
+ <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" name="simpan" class="btn btn-info pull-right">Tambah</button>
+
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" style="width:800px">
                 <div class="modal-content">
