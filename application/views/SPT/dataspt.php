@@ -29,8 +29,8 @@
 			<tr>
 				<th width="5%" >No</th>
 				<th width="20%">No ST</th>
-				<th width="20%">NIP</th>
-				<th width="20%">Nama</th>
+				<th width="30%">NIP</th>
+				
 				<th width="20%">Nama Tugas</th>	
 				<th width="40%">Pilihan</th>	
 			</tr>
@@ -45,7 +45,7 @@
 				<td align="left"><?php echo $no++;?></td>
 				<td align="left"><?php echo $data['no_st']; ?></td>
 				<td align="left"><?php echo $data['NIP']; ?></td>	
-				<td align="left"><?php echo $data['nama']; ?></td> 
+			
 				<td align="left"><?php echo $data['nama_tugas']; ?></td>	
 				<td align="left"> 
 

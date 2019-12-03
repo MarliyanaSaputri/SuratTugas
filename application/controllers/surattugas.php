@@ -29,13 +29,15 @@ class  Surattugas extends CI_Controller {
 		define ('FPDF_FONTPATH',$this->config->item('fonts_path'));
 	}
 
+
 	public function index()
 	{
 		$tabel = "tb_st";//ambil table 
 		$tabeljoin = "tb_pegawai";
+
 		$wherejoin="NIP"; 
 		$data=array('title'=>'Dasbor',
-		'daftarst' => $this->daftar_model->get_all($tabel,$tabeljoin,$wherejoin),
+		'daftarst' => $this->daftar_model->daftar_view($tabel),
 		 'isi' =>'spt/dataspt'
 		 );
 		$this->load->view('layout/wrapper',$data);
@@ -58,6 +60,7 @@ class  Surattugas extends CI_Controller {
 		$this->load->view('layout/wrapper',$data);	
 	}
 
+
 	public function prosestambah()
 	{	
 		$notugas = $this->input->post('kd_tugas');
@@ -68,17 +71,20 @@ class  Surattugas extends CI_Controller {
 		$tgl_pembuatan = $this->input->post('tgl_pembuatan');
 		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . '-'.substr ($tgl_pembuatan ,0,2) ;
 		// $nip = implode(",", $this->input->post('NIP'));
-		$nip = implode(",", $this->input->post('NIP'));
+		$kd_bid= $this->fungsi->user_login()->kd_bid;
+		$kd=$this->input->post('nama_tugas');
+		$nip = implode(",", $this->input->post('addmore'));
 	$data = array(  //data yang akan ditambah pada table 
 		'no_st' =>	$no_st,
 		 'NIP'=>$nip,
-		// 'kd_bid'=>$kd_bid,
+		'kd_bid'=>$kd_bid,
 		'nama_tugas' => $nama_tugas,
 		'tgl_pembuatan' => $tgl_pembuatan
 	);
 		$this->daftar_model->insert_data($data ,'tb_st');
 		redirect(base_url('surattugas'));
 	}
+
 
 	public function delete($id)
 	{	
@@ -89,6 +95,7 @@ class  Surattugas extends CI_Controller {
 	 //tampilkan daftar 
 	redirect(base_url('surattugas'));
 	 }
+
 
 	public function update_st($nourut)
 	{
@@ -110,6 +117,7 @@ class  Surattugas extends CI_Controller {
 		 );
 		$this->load->view('layout/wrapper',$data);
 	}
+
 
 	public function proses_update($nourut)
 	{
@@ -134,6 +142,7 @@ class  Surattugas extends CI_Controller {
     $this->daftar_model->update_data($where,$data ,'tb_st');
 	redirect('surattugas');
 	}
+
 
 	public function cetak_spt($nourut)
 	{
