@@ -55,24 +55,24 @@ class  Surattugas extends CI_Controller {
 		'datapegawai' => $this->daftar_model->daftar_view($tabel3),
 		'isi' =>'spt/tambahspt'
 		 );
-
 		$this->load->view('layout/wrapper',$data);	
 	}
 
 	public function prosestambah()
 	{	
 		$notugas = $this->input->post('kd_tugas');
-		$kd_bid = $this->input->post('kd_bid');
+		// $kd_bid = $this->input->post('kd_bid');
 		$no_st = $this->input->post('no_st');
-		$nip = $this->input->post('NIP');
+		 // $nip = $this->input->post('NIP');
 		$nama_tugas = $this->input->post('nama_tugas');
 		$tgl_pembuatan = $this->input->post('tgl_pembuatan');
 		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . '-'.substr ($tgl_pembuatan ,0,2) ;
-
+		// $nip = implode(",", $this->input->post('NIP'));
+		$nip = implode(",", $this->input->post('NIP'));
 	$data = array(  //data yang akan ditambah pada table 
 		'no_st' =>	$no_st,
-		'NIP'=>$nip,
-		'kd_bid'=>$kd_bid,
+		 'NIP'=>$nip,
+		// 'kd_bid'=>$kd_bid,
 		'nama_tugas' => $nama_tugas,
 		'tgl_pembuatan' => $tgl_pembuatan
 	);
@@ -106,10 +106,9 @@ class  Surattugas extends CI_Controller {
 		'databd' => $this->daftar_model->daftar_view($tabel1),
 		'datatugas' => $this->daftar_model->daftar_view($tabel2),
 		'datapegawai' => $this->daftar_model->daftar_view($tabel3),
-		 'isi' =>'spt/updatespt'
+		'isi' =>'spt/updatespt'
 		 );
 		$this->load->view('layout/wrapper',$data);
-		
 	}
 
 	public function proses_update($nourut)

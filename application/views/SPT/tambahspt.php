@@ -90,8 +90,7 @@
                             <thead>
                                 <tr>
                                     <th>Nim</th>
-                                    <th>Nama</th>
-								
+                                    <th>Nama</th>								
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,7 +136,6 @@
   </div>
 </div>
 
- <button type="submit" class="btn btn-default">Cancel</button>
             <button type="submit" name="simpan" class="btn btn-info pull-right">Tambah</button>
 
  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -158,7 +156,6 @@
                             <tbody>
                             <?php
                             $no  = 1;
-						
                             foreach ($query as $data) :
                             ?>
                               <tr class="pilih" data-nip="<?php echo $data['NIP']; ?>">
@@ -186,8 +183,6 @@
       });
     });
 </script>
-
-
         <script type="text/javascript">
         function price() {
         var th = <?php echo date('Y')?>;
