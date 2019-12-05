@@ -66,8 +66,7 @@ class pdf extends FPDF{
 		$this->MultiCell(130,5,'Keputusan Gubernur Jawa Timur Nomor : 903/279/203.2/2018 Tanggal 31 Desember 2018 tentang Penetapan Dokumen Pelaksanaan Anggaran Satuan Kerja Perangkat Daerah (DPA-SKPD) Dinas Komunikasi dan Informatika Provinsi Jawa Timur Tahun Anggaran 2019. ','J');
 	}
 	
-	// function kepada($nama,$nip,$pangkat,$golongan,$jabatan){
-	function kepada($nip){
+	function kepada($nama,$nip,$pangkat,$golongan,$jabatan){
 		$this->Ln(5);
 		$this->SetFont('Times','',12);
 		$this->SetXY(17,125);
@@ -75,12 +74,9 @@ class pdf extends FPDF{
 		$this->SetXY(15,125);
 		$this->Cell(40);
 		$this->MultiCell(130,5,':	'.'		Nama','J');
-		// $this->SetXY(50,125);
-		// $this->Cell(40);
-		// $this->MultiCell(130,5,': '.$nama,'J');
-
-
-
+		$this->SetXY(50,125);
+		$this->Cell(40);
+		$this->MultiCell(130,5,': '.$nama,'J');
 		$this->SetXY(17,132);
 		$this->Cell(40);
 		$this->MultiCell(130,5,''.'		NIP','J');
@@ -92,13 +88,13 @@ class pdf extends FPDF{
 		$this->MultiCell(130,5,''.'		Pangkat/Gol','J');
 		$this->SetXY(50,139);
 		$this->Cell(40);
-		// $this->MultiCell(130,5,': '.$pangkat. ' - '.$golongan,'J');
-		// $this->SetXY(17,146);
-		// $this->Cell(40);
-		// $this->MultiCell(130,5,''.'		Jabatan','J');
-		// $this->SetXY(50,146);
-		// $this->Cell(40);
-		// $this->MultiCell(100,5,': '.$jabatan,'J');
+		$this->MultiCell(130,5,': '.$pangkat. ' - '.$golongan,'J');
+		$this->SetXY(17,146);
+		$this->Cell(40);
+		$this->MultiCell(130,5,''.'		Jabatan','J');
+		$this->SetXY(50,146);
+		$this->Cell(40);
+		$this->MultiCell(100,5,': '.$jabatan,'J');
 	}
 	
 	function tujuan($teks,$teks2){
@@ -161,26 +157,7 @@ $pdf->judul2('SURAT  PERINTAH  TUGAS','Nomor :',$no_st);
 //isi
 $pdf->dasar();
 $pdf->judul3();
-
- // print_r($data);
-
-// string menjadi array
-$no=0;
-$tag = explode(",", $NIP);
-// $pdf->kepada($NIP);
-	 // $pdf->kepada($nama, $NIP,$pangkat,$golongan,$jabatan);
-if ($tag > $no++ ) {
-	$pdf->kepada($nama, $tag[0],$pangkat,$golongan,$jabatan);
-}else{
-	$pdf->kepada($nama, $tag++,$pangkat,$golongan,$jabatan);
-
-}
-	
-
-
-
-
-
+$pdf->kepada($nama,$NIP,$pangkat,$golongan,$jabatan);
 $pdf->tujuan('Untuk',$nama_tugas);
 
 //tanda tangan kepbag
