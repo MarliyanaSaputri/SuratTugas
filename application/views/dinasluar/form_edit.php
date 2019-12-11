@@ -72,7 +72,8 @@
 						                  	foreach($tag as $t):
 										?>
 										
-					                  	<input type="text" class="form-control" value="<?php echo $t ?>" name="peserta_hadir" id="peserta_hadir">
+					                  	<input type="text" class="form-control" value="<?php echo $t ?>" name="peserta_hadir[]" id="hadir">
+					                  	<!-- <a href='#' color="#3399FD" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a> -->
 					                  	<?php endforeach; ?>
 
 					                  	<input id="hadir" value="1" type="hidden" />
