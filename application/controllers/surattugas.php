@@ -34,7 +34,6 @@ class  Surattugas extends CI_Controller {
 	{
 		$tabel = "tb_st";//ambil table 
 		$tabeljoin = "tb_pegawai";
-
 		$wherejoin="NIP"; 
 		$data=array('title'=>'Dasbor',
 		'daftarst' => $this->daftar_model->daftar_view($tabel),
@@ -70,7 +69,6 @@ class  Surattugas extends CI_Controller {
 		$nama_tugas = $this->input->post('nama_tugas');
 		$tgl_pembuatan = $this->input->post('tgl_pembuatan');
 		$tgl_pembuatan =  substr ($tgl_pembuatan ,6,4) . '-'.substr ($tgl_pembuatan,3,2) . '-'.substr ($tgl_pembuatan ,0,2) ;
-		// $nip = implode(",", $this->input->post('NIP'));
 		$kd_bid= $this->fungsi->user_login()->kd_bid;
 		$kd=$this->input->post('nama_tugas');
 		$nip = implode(",", $this->input->post('addmore'));
