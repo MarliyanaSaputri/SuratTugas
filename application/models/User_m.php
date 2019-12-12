@@ -56,7 +56,7 @@ class User_m extends CI_Model
  		$params['password'] = sha1($post['password']);
 		$params['level'] = $post['level'];
 		$this->db->where('NIP', $post['NIP']);
-		$this->db->update('tb_peagwai', $params);
+		$this->db->update('tb_pegawai', $params);
  	}
 
 
