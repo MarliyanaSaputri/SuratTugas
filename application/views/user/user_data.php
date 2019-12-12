@@ -24,12 +24,7 @@
         <div class="box">
                 <div class="box-header">
                         <h3 class="box-title text-center">Data User</h3>
-                        <div class="pull-right">
-                                <a href="<?=site_url('user/add')?>" class="btn btn-primary btn-flat">
-                                        <i class="fa fa-plus"></i> Create
-                                </a>
-
-                        </div>
+                        
                 </div>
                 
                 
@@ -59,11 +54,11 @@
 
                                                  <form action="<?=site_url('user/del')?>" method="post">
 
-                                             <a href="<?=site_url('user/edit/'.$data->user_id)?>" class="btn btn-primary btn-sm" >
+                                             <a href="<?=site_url('user/edit/'.$data->NIP)?>" class="btn btn-primary btn-sm" >
                                                         <i class="glyphicon glyphicon-pencil"></i> Update
                                                 </a> 
                                                         
-                                                  <input type="hidden" name="user_id" value="<?=$data->user_id?>">
+                                                  <input type="hidden" name="NIP" value="<?=$data->NIP?>">
 
                                                <button onclick="return confirm ('Apakah Anda Yakin ?')"  class="btn btn-danger btn-sm" >
                                                         <i class="glyphicon glyphicon-trash"></i> Delete
