@@ -138,40 +138,7 @@
 
             <button type="submit" name="simpan" class="btn btn-info pull-right">Tambah</button>
 
- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" style="width:800px">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Data Pegawai</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table id="lookup" class="table table-bordered table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th>NIP</th>
-                                    <th>Nama</th>                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $no  = 1;
-                            foreach ($query as $data) :
-                            ?>
-                              <tr class="pilih" data-nip="<?php echo $data['NIP']; ?>">
-                             
-                                <td><?php echo $data['NIP']; ?></td>
-                                <td><?php echo $data['nama']; ?></td>                                 
-                                </tr>
-                                <?php
-                                endforeach;
-                                ?>
-                            </tbody>
-                        </table>  
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
 <script type="text/javascript">
     $(document).ready(function() {
       $(".add-more").click(function(){ 
