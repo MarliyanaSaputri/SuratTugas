@@ -37,7 +37,15 @@
 	                                        NIP 
 	                                    </label>
 	                                     <div class="col-md-5">
-	                                    	<input type="text" class="form-control" value ="<?php echo $dl['NIP']; ?>" name="NIP" id="NIP" placeholder="" readonly="" />
+	                                     	<!-- Penggunaan Fungsi explode () -->
+											<?php 
+												$tag = explode(",", $dl['NIP']);
+							                  	foreach($tag as $t):
+											?>
+											
+						                  	<input type="text" class="form-control" value="<?php echo $t ?>" name="NIP" id="NIP">
+	                                    	<!-- <input type="text" class="form-control" value="<?php echo $st['NIP']; ?>" name="NIP" placeholder="" readonly="" /> -->
+	                                    	<?php endforeach; ?>
 										</div>
 									</div>
 
@@ -162,10 +170,10 @@
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' name='peserta_hadir[]' placeholder=' Nama Peserta ' class='form-control'><button type='btn' class='btn btn-danger' style=\"color:#FFFFFF;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'><span class='glyphicon glyphicon-minus'>Hapus</span></button></p>";
+							     stre="<p id='srow" + hadir + "'><input type='text' name='peserta_hadir[]' class='form-control' placeholder=' Nama Peserta '><button type='btn' class='btn btn-danger' style=\"color:#FFFFFF;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'><span class='glyphicon glyphicon-minus'>Hapus</span></button></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
-							     document.getElementById("hadir").value = hadir;
+							     document.getElementById("hadir").value = hadir;  
 							   }
 							   function hapusElemen(hadir) {
 							     $(hadir).remove();
