@@ -67,7 +67,12 @@ class pdf extends FPDF{
 		
 	}
 
-	function tugas($nama){
+	function tugas($NIP){
+		$no  = 0;
+		$nip = $NIP;
+		$tag = explode(",", $nip);
+		foreach($tag as $t):
+
 		$this->SetFont('Times','',12);
 		$this->SetXY(14,130);
 		$this->Cell(0,5,'III'  ,0,1,'L');
@@ -75,11 +80,22 @@ class pdf extends FPDF{
 		$this->Cell(0,5,'Yang'  ,0,1,'L');
 		$this->SetXY(24,131);
 		$this->Cell(0,14,'di Tugaskan '  ,0,1,'L');
-		$this->SetXY(24,130);
-		$this->Cell(38);
-		$this->MultiCell(130,5,': '.$nama,'J');
-		$this->SetXY(21,35);
-		$this->Cell(40);
+
+		//$no++;
+		if($nip==$no++){
+			$this->SetXY(24,130);
+			$this->Cell(38);
+			$this->MultiCell(130,5,': '.$no.". ".$t,'J');
+		} 
+		else{
+			$this->SetXY(24,137);
+			$this->Cell(38);
+			$this->MultiCell(130,5,': '.$no.". ".$t,'J');
+
+			$this->SetXY(21,35);
+			$this->Cell(40);
+		}
+		endforeach;
 		
 	}
 
@@ -114,9 +130,6 @@ class pdf extends FPDF{
 	function hadir($peserta_hadir){
 		$no  = 0;
 		$had1 = $peserta_hadir;
-	//	$had2 = $hadir2;
-	//	$had3 = $hadir3;
-	//	$had4 = $hadir4;
 
 		$tag = explode(",", $had1);
 		foreach($tag as $t):
@@ -133,26 +146,11 @@ class pdf extends FPDF{
 			$this->SetXY(24,182);
 			$this->Cell(38);
 			$this->MultiCell(130,5,': '.$no.". ".$t,'J');
-		} /*if($had2){
-		$no++;
-			$this->SetXY(24,187);
-			$this->Cell(38);
-			$this->MultiCell(130,5,'  '.$no.". ".$had2,'J');
-		} if($had3){
-		$no++;
-			$this->SetXY(24,192);
-			$this->Cell(38);
-			$this->MultiCell(130,5,'  '.$no.". ".$had3,'J');
-		} if($had4){
-		$no++;
-			$this->SetXY(24,197);
-			$this->Cell(38);
-			$this->MultiCell(130,5,'  '.$no.". ".$had4,'J');
-		}*/ 
+		} 
 		else{
 			$this->SetXY(24,188);
 			$this->Cell(38);
-			$this->MultiCell(130,5,'  '.$no.". ".$t++,'J');
+			$this->MultiCell(130,5,'  '.$no.". ".$t,'J');
 			
 			$this->SetXY(21,35);
 			$this->Cell(40);
@@ -206,7 +204,7 @@ class pdf extends FPDF{
 		$this->Cell(40);
 	}
 	
-	function penanggung($nama,$NIP){
+	function penanggung($namakp,$nipkp){
 		$this->SetFont('Times','',12);
 		$this->SetXY(14,200);
 		$this->Cell(0,5,'XI    Penanggung Jawab',0,1,'L');
@@ -214,9 +212,9 @@ class pdf extends FPDF{
 		$this->Cell(30);
 		$this->Cell(130,5,': ','J');
 		$this->SetXY(23,230);
-		$this->Cell(0,5,$nama,0,1,'L');
-		$this->SetXY(24,236);
-		$this->MultiCell(0,5,'NIP. '.$NIP,'J');
+		$this->Cell(0,5,$namakp,0,1,'L');
+		$this->SetXY(23,236);
+		$this->MultiCell(0,5,'NIP.'.$nipkp,'J');
 	}
 
 	function ttd($tgl_pembuatan){
@@ -248,14 +246,14 @@ $pdf->AddPage('P', 'A4');
 // //isi
 $pdf->dasar();
 $pdf->maksud($maksud_tujuan);
-$pdf->tugas($nama);
+$pdf->tugas($NIP);
 $pdf->daerah($daerah_tujuan);
 $pdf->jadwal($tgl_pelaksanaan,$tgl_akhir);
 $pdf->hadir($peserta_hadir);
 $pdf->bahasan($bahasan);
 $pdf->petunjuk();
 $pdf->lain_lain($lain);
-$pdf->penanggung($nama,$NIP);
+$pdf->penanggung($namakp,$nipkp);
 $pdf->ttd($tgl_pembuatan);
 
 $date = date('d-M-Y  h:i:s');

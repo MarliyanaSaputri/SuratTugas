@@ -29,8 +29,8 @@ class  DinasLuar extends CI_Controller {
 	public function tambahdl()
 	{
 		$tabel = "tb_st";
-		$tabeljoin = "tb_pegawai";
-		$wherejoin ="NIP"; 
+		$tabeljoin = "tb_bidang";
+		$wherejoin ="kd_bid"; 
 		$data=array('title'=>'TambahDL',
 		//'tambahdl' => $this->daftar_model->cari_data($tabel,$where),
 		'tambahdl' => $this->daftar_model->get_caridl($tabel,$tabeljoin,$wherejoin),
@@ -61,6 +61,7 @@ class  DinasLuar extends CI_Controller {
 		//$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
+		//$nip = implode(",", $this->input->post('NIP'));
 		$maksud = $this->input->post('maksud_tujuan');
 		$range_tgl = $this->input->post('tgl_pelaksanaan');
 		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
@@ -68,9 +69,7 @@ class  DinasLuar extends CI_Controller {
 		$range_tgl2 = $this->input->post('tgl_pelaksanaan');
 		$range_tgl2 =  substr($range_tgl2,17,4) . '-'.substr($range_tgl2,14,2) . 
 	'-'.substr($range_tgl2,11,2) ;
-
 		$hadir = implode(",", $this->input->post('peserta_hadir'));
-
 		$daerah = $this->input->post('daerah_tujuan');
 		$bahas = $this->input->post('bahasan');
 		$lain = $this->input->post('lain-lain');
@@ -143,6 +142,7 @@ class  DinasLuar extends CI_Controller {
 		//$id_dl = $this->input->post('id_dl');
 		$nost = $this->input->post('no_st');
 		$nip = $this->input->post('NIP');
+		//$nip = implode(",", $this->input->post('NIP'));
 		$maksud = $this->input->post('maksud_tujuan');
 		$range_tgl = $this->input->post('tgl_pelaksanaan');
 		$range_tgl =  substr($range_tgl,6,4) . '-'.substr($range_tgl,3,2) . 
@@ -195,11 +195,12 @@ class  DinasLuar extends CI_Controller {
 		$tabel = "tb_dl";	
 		$tabeljoin = "tb_pegawai";
 		$wherejoin ="NIP"; 
-		$wherejb = array('jabatan');
+		$wherejb = array('jabatan'=>'Kepala Bidang Aplikasi Informatika');
 		$where = array('id_dl'=>$no); 
 		
 		$cek1= $this->daftar_model->get_caridata($tabel,$tabeljoin,$wherejoin,$id);
 		$cek=$this->daftar_model->cari_data($tabel,$where);
+		$cek2=$this->daftar_model->cari_data($tabeljoin,$wherejb);
 		
 			foreach ($cek as $result)
 			{
@@ -224,6 +225,12 @@ class  DinasLuar extends CI_Controller {
 				$nama=$result['nama'];
 			}
 
+			foreach ($cek2 as $result)
+			{
+				$nipkp=$result['NIP'];
+				$namakp=$result['nama'];
+			}
+
 			
 			$data=array('id_dl'=>$no,
 				'no_st'=>$no_st,
@@ -236,7 +243,9 @@ class  DinasLuar extends CI_Controller {
 				'daerah_tujuan'=>$daerah_tujuan,
 				'nama'=>$nama,
 				'tgl_pembuatan'=>$tgl_pembuatan,
-				'lain'=>$lain
+				'lain'=>$lain,
+				'nipkp'=>$nipkp,
+				'namakp'=>$namakp
 			);              
 				
 

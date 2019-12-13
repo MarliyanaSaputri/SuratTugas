@@ -77,7 +77,7 @@
 					                  	<?php endforeach; ?>
 
 					                  	<input id="hadir" value="1" type="hidden" />
-									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
+									    <button type="button" onclick="tambahPeserta(); return false;" class="btn btn-success"><span class="glyphicon glyphicon-plus">Tambah</span></button>
 									    <div id="divPeserta"></div> 
 									
 					                  </div>
@@ -162,7 +162,7 @@
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     stre="<p id='srow" + hadir + "'><input type='text' name='peserta_hadir[]' placeholder=' Nama Peserta ' class='form-control'><button type='btn' class='btn btn-danger' style=\"color:#FFFFFF;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'><span class='glyphicon glyphicon-minus'>Hapus</span></button></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
 							     document.getElementById("hadir").value = hadir;

@@ -40,7 +40,15 @@
 	                                        NIP 
 	                                    </label>
 	                                     <div class="col-md-5">
-	                                    	<input type="text" class="form-control" value="<?php echo $st['NIP']; ?>" name="NIP" placeholder="" readonly="" />
+	                                     	<!-- Penggunaan Fungsi explode () -->
+											<?php 
+												$tag = explode(",", $st['NIP']);
+							                  	foreach($tag as $t):
+											?>
+											
+						                  	<input type="text" class="form-control" value="<?php echo $t ?>" name="NIP" id="NIP">
+	                                    	<!-- <input type="text" class="form-control" value="<?php echo $st['NIP']; ?>" name="NIP" placeholder="" readonly="" /> -->
+	                                    	<?php endforeach; ?>
 										</div>
 									</div>
 
@@ -67,9 +75,8 @@
 							                Peserta yang Hadir 
 							            </label>
 					                  <div class="col-sm-5">
-					                  	<!-- <input type="text" class="form-control" name="peserta_hadir" placeholder="1. "> -->
-					                  	<input id="hadir" value="1" type="hidden" class="form-control" />
-									    <button type="button" onclick="tambahPeserta(); return false;"><span class="glyphicon glyphicon-plus"></span></button>
+					                  	<input id="hadir" value="1" type="hidden" />
+									    <button type="button" onclick="tambahPeserta(); return false;" class="btn btn-success"><span class="glyphicon glyphicon-plus">Tambah</span></button>
 									    <div id="divPeserta"></div> 
 					                  </div>
 					                </div>
@@ -156,7 +163,7 @@
 							   function tambahPeserta() {
 							     var hadir = document.getElementById("hadir").value;
 							     var stre;
-							     stre="<p id='srow" + hadir + "'><input type='text' size='45' name='peserta_hadir[]'class='form-control' placeholder=' Nama Peserta ' /> <a href='#' style=\"color:#3399FD;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'>Hapus</a></p>";
+							     stre="<p id='srow" + hadir + "'><input type='text' name='peserta_hadir[]' class='form-control' placeholder=' Nama Peserta '><button type='btn' class='btn btn-danger' style=\"color:#FFFFFF;\" onclick='hapusElemen(\"#srow" + hadir + "\"); return false;'><span class='glyphicon glyphicon-minus'>Hapus</span></button></p>";
 							     $("#divPeserta").append(stre);
 							     hadir = (hadir-1) + 2;
 							     document.getElementById("hadir").value = hadir;  
