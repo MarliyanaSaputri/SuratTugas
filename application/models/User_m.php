@@ -33,7 +33,7 @@ class User_m extends CI_Model
  		$params['username'] = $post['username'];
  		$params['password'] = sha1($post['username']);
 		$params['level'] = $post['level'];
-		$this->db->insert('user', $params);
+		$this->db->insert('tb_pegawai', $params);
  	}
 
 
@@ -41,8 +41,8 @@ class User_m extends CI_Model
 		public function del($id)
 	{
 
-		$this->db->where('user_id', $id);
-		$this->db->Delete('user');
+		$this->db->where('NIP', $id);
+		$this->db->Delete('tb_pegawai');
 	}
 
 

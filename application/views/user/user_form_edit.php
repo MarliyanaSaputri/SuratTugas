@@ -61,7 +61,7 @@ div.back {
 
 <div class="form-group <?=form_error('fullname') ? 'has-error' : null?>">
 	<label>Nama *</label>
-    <input type="hidden" name="NIP" value="<?=$row->NIP?>">
+    <input type="hidden" name="user_id" value="<?=$row->user_id?>">
 	<input type="text" name="fullname" value="<?=$this->input->post('fullname') ? : $row->nama?>" class="form-control">
 	<?=form_error('fullname')?>
 </div>
