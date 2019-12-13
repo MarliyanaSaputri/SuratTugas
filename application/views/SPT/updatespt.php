@@ -18,7 +18,9 @@
                             <section class="content">
                                 <div class="row">
                                 <div class="col-md-12">
-                                <?php foreach($datast as $st): ?>
+                                <?php 
+                                
+                                foreach($datast as $st): ?>
                                  <form class="form-horizontal" method="post" id="frm" action="<?php echo base_url() ?>surattugas/proses_update/<?php echo $st['id_st'] ;?>" >
                                 <div class="box-body">
                                     <div class="form-group">
@@ -53,21 +55,60 @@
                                     <input type="text" class="form-control" value="<?php echo $st['no_st']?>" name="no_st" id="no_st" placeholder="">
                                     </div>
                                     </div>
-                                    <div class="form-group">
-                                    <label for="firstname" class="col-md-3">
-                                        NIP 
-                                    </label>
-                                    <div class="col-md-5">
-                                        <input type="text" readonly="" class="form-control" value="<?php echo $st['NIP']?>" name="NIP" id="NIP"  />
+                             
+                                     <div class="form-group">
+                                       <label for="firstname" class="col-md-3">
+                                            NIP 
+                                        </label>
+                                      <div class="col-sm-5">                                  
+                                         
+
+        <?php 
+                                $tag = explode(",", $st['NIP']);
+                                           
+                                foreach($tag as $sts): ?>
+                                    <!-- Copy Fields -->
+        <div class="form-group" >
+
+          <div  class="col-sm-12" class="control-group input-group"style="margin-top:10px" >
+
+            <input type="text" name="addmore[]" value="<?php echo $sts ?>" id="NIP" class="form-control" placeholder="Enter Name Here">
+
+            <div class="input-group-btn"> 
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                            </button> 
+              <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
+            
+          </div>
+        </div>
+    </div>
+   
+                                    <?php endforeach;?>  
+
+<div class="input-group control-group after-add-more">
+                                          <div class="input-group-btn"> 
+                                            <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
+                                          </div>
+                                        </div>                                 
+                                      </div>
                                     </div>
-                                    <?php foreach($pegawai as $pg):?>
-                                    <div class="col-md-2">
-                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
+  <div class="copy hide">
+          <div class="control-group input-group"style="margin-top:10px" >
+
+            <input type="text" name="addmore[]"  id="NIP" class="form-control" placeholder="Enter Name Here">
+
+            <div class="input-group-btn"> 
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                            </button> 
+              <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Hapus</button>
+            
+          </div>
+        </div>
+    </div>
+
+                                   <!--  <div class="form-group">
                                     <label for="firstname" class="col-md-3">
                                     Nama</label>
                                     <div class="col-sm-5">
@@ -89,7 +130,7 @@
                                     <div class="col-sm-5">
                                     <textarea type="text" readonly="" class="form-control" id="jabatan" name="jabatan" placeholder=""><?php echo $pg['jabatan']?></textarea>
                                     </div>
-                                    </div>  
+                                    </div>   -->
                                     <?php
                                     endforeach;
                                     ?>                                
@@ -118,48 +159,49 @@
                                     </div>
                                 </div>
                                 </div>
-         <!-- Modal -->
-     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width:800px">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Lookup Mahasiswa</h4>
-            </div>
-            <div class="modal-body">
-                <table id="lookup" class="table table-bordered table-hover table-striped">
+
+  
+
+
+                <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width:800px">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Data Pegawai</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table id="lookup" class="table table-bordered table-hover table-striped">
                             <thead>
-                            <tr>
-                                <th>NIP</th>
-                                <th>Nama</th>                
-                            </tr>
+                                <tr>
+                                    <th>Nim</th>
+                                    <th>Nama</th>                               
+                                </tr>
                             </thead>
                             <tbody>
-                            <?php
+                               <?php
                             $no  = 1;
                             foreach ($datapegawai as $data) :
                             ?>
-                            <tr class="pilih" data-NIP="<?php echo $data['NIP']; ?>"
-                            data-nama="<?php echo $data['nama']; ?>"
-                            data-pangkat="<?php echo $data['pangkat']; ?>"
-                            data-golongan="<?php echo $data['golongan']; ?>"
-                            data-jabatan="<?php echo $data['jabatan']; ?>">
-                           <td><?php echo $data['NIP']; ?></td>
-                            <td><?php echo $data['nama']; ?></td>                                    
-                            </tr>
-                            <?php
-                            endforeach;
-                            ?>
-                            <?php
-                            endforeach;
-                            ?>
-                               
+                              <tr class="pilih" data-nip="<?php echo $data['NIP']; ?>"
+                                data-nama="<?php echo $data['nama']; ?>"
+                                    data-pangkat="<?php echo $data['pangkat']; ?>"
+                                        data-golongan="<?php echo $data['golongan']; ?>"
+                                        data-jabatan="<?php echo $data['jabatan']; ?>">
+                                <td><?php echo $data['NIP']; ?>  </td>
+                                <td><?php echo $data['nama']; ?></td>                                 
+                                </tr>
+                                 <?php
+                                endforeach;
+                                ?>
                             </tbody>
                         </table>  
                     </div>
                 </div>
             </div>
-        </div>   
+        </div>
+        
        
         <script type="text/javascript">
         function price() { 
@@ -169,3 +211,16 @@
         document.getElementById("no_st").value=tes + " " + " / " + kd + " / "+ th ;
         }
         </script>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $(".add-more").click(function(){ 
+          var html = $(".copy").html();
+          $(".after-add-more").after(html);
+      });
+      $("body").on("click",".remove",function(){ 
+          $(this).parents(".control-group").remove();
+      });
+    });
+</script>
