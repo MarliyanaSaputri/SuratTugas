@@ -70,6 +70,7 @@ class pdf extends FPDF{
 	function tugas($NIP){
 		$no  = 0;
 		$nip = $NIP;
+		
 		$tag = explode(",", $nip);
 		foreach($tag as $t):
 

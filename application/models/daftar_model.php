@@ -49,9 +49,9 @@ class Daftar_model extends CI_Model
 		return $query->result_array();
 	}
 
-		public function get_caridl($tabel,$tabeljoin,$wherejoin)
+		public function get_caridl()
 	{
-		$query = $this->db->get_where("$tabel jm JOIN $tabeljoin m ON m.$wherejoin = jm.$wherejoin where status = 'Belum_DL'");
+		$query = $this->db->query("select * from tb_st where status = 'Belum_DL'");
 		return $query->result_array();
 	}
 
